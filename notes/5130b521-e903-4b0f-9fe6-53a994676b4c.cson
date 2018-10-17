@@ -1,0 +1,15 @@
+createdAt: "2018-10-17T06:33:57.137Z"
+updatedAt: "2018-10-17T06:34:00.454Z"
+type: "MARKDOWN_NOTE"
+folder: "2d90bb286c7337ef5d47"
+title: "—keep-cr 解决 windows 换行符问题"
+content: '''
+  git checkout local
+  git format-patch -M master
+  # —keep-cr 解决 windows 换行符问题
+  git am --keep-cr 0003-change.patch
+  
+'''
+tags: []
+isStarred: false
+isTrashed: false

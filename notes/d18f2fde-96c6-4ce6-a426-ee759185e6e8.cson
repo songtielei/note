@@ -1,0 +1,73 @@
+createdAt: "2018-10-17T06:36:32.763Z"
+updatedAt: "2018-10-17T06:36:36.368Z"
+type: "MARKDOWN_NOTE"
+folder: "de5e4e5a0fe5f5b33def"
+title: "数据源 保存字段 速度慢"
+content: '''
+  数据源 保存字段 速度慢
+  多次导入清空数据源
+  常量sql检测
+  非计算指标 没有数值
+  复合指标要有下级指标
+  
+   删除时要知道被谁引用了
+  
+  岗位类型 可以引用指标
+  
+  
+  奖金激励 的指标返回所有
+  加权复合
+  算术复合 
+  
+  
+  
+  
+  ALTER TABLE `spm`.`spm_datasource_field_define` 
+  CHANGE COLUMN `field_value_type` `field_value_type` VARCHAR(50) NULL DEFAULT NULL COMMENT '字段值类型' ;
+  
+  update spm.spm_datasource_field_define set field_value_type = field_type
+  
+  
+  生成echart图的指标树有问题
+  
+  1.	我的待办里面的批次查询
+  2.	我的待办—— 批量通过，驳回
+  3.	我的待办——  确认后进去详情页面500  没有详情页接口
+  
+  
+  订单二次过滤只针对兼岗人员
+  
+  常量创建人
+  
+  
+  指标删除
+  常量删除
+  数据源删除
+  
+  指标保存时问题
+  
+  指标引用时问题
+  
+  任务 by 分区 by 行业
+  
+  
+  
+  工作流 2 - 3 天
+  删除 2 天
+  
+  
+  数据源检测时要有等待页面
+  
+  
+  field重复时的判断 返回出错提示  要用 as 设置别名 取别名
+  
+  查询问题
+  搜索框 场景 数据列 是组合查询
+  
+  高级筛选是单独的查询
+  
+  
+'''
+tags: []
+isStarred: false
+isTrashed: false

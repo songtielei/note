@@ -1,0 +1,29 @@
+createdAt: "2018-10-17T06:33:25.821Z"
+updatedAt: "2018-10-17T06:33:29.538Z"
+type: "MARKDOWN_NOTE"
+folder: "2d90bb286c7337ef5d47"
+title: "/etc/opkg/distfeeds.conf openwrt"
+content: '''
+  /etc/opkg/distfeeds.conf openwrt
+  
+  opkg update && opkg install shadow-useradd && useradd openwrt && passwd openwrt
+  
+  opkg install sudo
+  mkdir -p /home/openwrt
+  chown openwrt /home/openwrt
+  vi /etc/passwd
+     openwrt:x:1000:1000:openwrt:/home/openwrt:/bin/ash
+  
+  opkg install kmod-usb-storage kmod-usb-storage-extras block-mount kmod-fs-ext4 	
+  
+  For enabling this method you should open the file '/etc/sudoers' by entering the command
+  visudo
+  Then uncomment the 2 lines below in that file and then save
+  ## Uncomment to allow any user to run sudo if they know the password         
+  ## of the user they are running the command as (root by default).            
+  Defaults targetpw  # Ask for the password of the target user                 
+  ALL ALL=(ALL) ALL  # WARNING: only use this together with 'Defaults targetpw'
+'''
+tags: []
+isStarred: false
+isTrashed: false

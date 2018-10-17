@@ -1,0 +1,51 @@
+createdAt: "2018-10-17T06:24:22.832Z"
+updatedAt: "2018-10-17T06:24:26.617Z"
+type: "SNIPPET_NOTE"
+folder: "de5e4e5a0fe5f5b33def"
+title: ""
+description: ""
+snippets: [
+  {
+    name: ""
+    mode: "text"
+    content: '''
+      select * from act_id_user where ID_ in  (select ASSIGNEE_ FROM spm.act_hi_actinst);
+      
+      
+      update viprental_activiti_dev.ACT_HI_ACTINST ahc, viprental_activiti_dev.ACT_ID_USER aiu set ahc.ASSIGNEE_=aiu.FIRST_ where ahc.ASSIGNEE_=aiu.ID_;
+      
+      update viprental_activiti_dev.ACT_HI_COMMENT ahc, viprental_activiti_dev.ACT_ID_USER aiu set ahc.USER_ID_=aiu.FIRST_ where ahc.USER_ID_=aiu.ID_;
+      
+      
+      update viprental_activiti_dev.ACT_HI_DETAIL ahc, viprental_activiti_dev.ACT_ID_USER aiu set ahc.TEXT_=aiu.FIRST_ where ahc.TEXT_=aiu.ID_;
+      
+      update viprental_activiti_dev.ACT_HI_IDENTITYLINK ahc, viprental_activiti_dev.ACT_ID_USER aiu set ahc.USER_ID_=aiu.FIRST_ where ahc.USER_ID_=aiu.ID_;
+      
+      update viprental_activiti_dev.ACT_HI_PROCINST ahc, viprental_activiti_dev.ACT_ID_USER aiu set ahc.START_USER_ID_=aiu.FIRST_ where ahc.START_USER_ID_=aiu.ID_;
+      
+      update viprental_activiti_dev.ACT_HI_TASKINST ahc, viprental_activiti_dev.ACT_ID_USER aiu set ahc.OWNER_=aiu.FIRST_ where ahc.OWNER_=aiu.ID_;
+      
+      update viprental_activiti_dev.ACT_HI_TASKINST ahc, viprental_activiti_dev.ACT_ID_USER aiu set ahc.ASSIGNEE_=aiu.FIRST_ where ahc.ASSIGNEE_=aiu.ID_;
+      
+      update viprental_activiti_dev.ACT_HI_VARINST ahc, viprental_activiti_dev.ACT_ID_USER aiu set ahc.TEXT_=aiu.FIRST_ where ahc.TEXT_=aiu.ID_;
+      
+      
+      
+      
+      
+      update viprental_activiti_dev.ACT_RU_EXECUTION ahc, viprental_activiti_dev.ACT_ID_USER aiu set ahc.START_USER_ID_=aiu.FIRST_ where ahc.START_USER_ID_=aiu.ID_;
+      
+      update viprental_activiti_dev.ACT_RU_IDENTITYLINK ahc, viprental_activiti_dev.ACT_ID_USER aiu set ahc.USER_ID_=aiu.FIRST_ where ahc.USER_ID_=aiu.ID_;
+      
+      update viprental_activiti_dev.ACT_RU_TASK ahc, viprental_activiti_dev.ACT_ID_USER aiu set ahc.OWNER_=aiu.FIRST_ where ahc.OWNER_=aiu.ID_;
+      
+      update viprental_activiti_dev.ACT_RU_TASK ahc, viprental_activiti_dev.ACT_ID_USER aiu set ahc.ASSIGNEE_=aiu.FIRST_ where ahc.ASSIGNEE_=aiu.ID_;
+      
+      
+      update viprental_activiti_dev.ACT_RU_VARIABLE ahc, viprental_activiti_dev.ACT_ID_USER aiu set ahc.TEXT_=aiu.FIRST_ where ahc.TEXT_=aiu.ID_;
+    '''
+  }
+]
+tags: []
+isStarred: false
+isTrashed: false

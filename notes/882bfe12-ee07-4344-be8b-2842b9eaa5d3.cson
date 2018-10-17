@@ -1,0 +1,20 @@
+createdAt: "2018-10-17T06:37:53.167Z"
+updatedAt: "2018-10-17T06:37:56.989Z"
+type: "MARKDOWN_NOTE"
+folder: "de5e4e5a0fe5f5b33def"
+title: "客户划转与锁定关系"
+content: '''
+  客户划转与锁定关系
+  
+  商机划转是把商机线索分配给IS 
+  	判断itcode是否是IS
+  	当前业务处(部门id)
+  	商机线索有部门id (审批通过后更新部门id)
+  	审批通过后，对应的目标IS收到商机划转确认审批。商机划转的目标IS确认后商机客户对应的SWIS字段修改为目标IS，商机线	索的所有人修改为目标IS。
+  
+  客户划转
+  	
+'''
+tags: []
+isStarred: false
+isTrashed: false
