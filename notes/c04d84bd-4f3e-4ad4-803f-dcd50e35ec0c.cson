@@ -1,9 +1,0 @@
-createdAt: "2018-10-17T06:19:55.236Z"
-updatedAt: "2018-10-17T06:19:58.148Z"
-type: "MARKDOWN_NOTE"
-folder: "de5e4e5a0fe5f5b33def"
-title: "scp crm_standard_object1/* tele@10.122.29.1:/data/solr-7.4.0/server/solr/crm_standard_object1/conf/"
-content: "scp crm_standard_object1/* tele@10.122.29.1:/data/solr-7.4.0/server/solr/crm_standard_object1/conf/"
-tags: []
-isStarred: false
-isTrashed: false
