@@ -1,0 +1,81 @@
+createdAt: "2018-10-18T05:10:50.933Z"
+updatedAt: "2018-10-18T05:34:38.985Z"
+type: "MARKDOWN_NOTE"
+folder: "2d90bb286c7337ef5d47"
+title: "openwrt"
+content: '''
+   openwrt 
+   
+   openwrt luci-i18n-base-zh-cn
+   无线中继 Wireless Overview --> Add    Network 要选 lan
+   
+   openwrt共享硬盘
+  必需的Packages包
+  * kmod-usb-storage USB大容量存储设备的内核支持  
+  * kmod-usb-storage-extras 可选 Kernel support for some more drivers, such as for SmartMedia card readers  
+  * block-mount optional & recommended Scripts used to mount and check block devices (filesystems and swap) required to configure with /etc/config/fstab  
+      * blkid Command-line utility to locate/print block device attributes  
+      * swap-utils This package contains a collection of tools for managing swap space: mkswap, swapon and swapoff  
+  * kmod-fs-???? the filesystem you formated your partition in 
+  * 
+  
+  
+  opkg update
+  opkg install samba36-server
+  
+  
+  mount -t ext4 /dev/sda1 /mnt/share/
+  opkg install nfs-kernel-server
+  
+  /etc/init.d/portmap start
+  /etc/init.d/nfsd start
+  /etc/init.d/portmap enable
+  /etc/init.d/nfsd enable
+  
+  diskutil unmount /Users/evatlsong/Shares
+  mount -t nfs -o nolock 192.168.1.1:/mnt/share /Users/evatlsong/Shares/
+  
+  iptables -AINPUT -pTCP --dport 111 -jACCEPT 
+  iptables -AINPUT -pUDP --dport 111 -jACCEPT 
+  
+  
+  /etc/exports
+  /mnt    (rw,all_squash,insecure)
+  
+  
+  opkg update && opkg install unfs3
+  
+  opkg install nfs-kernel-server
+  
+  /etc/init.d/portmap start
+  /etc/init.d/unfs3 start
+  mount -t nfs -o rw 192.168.1.1:/mnt/share /Users/evatlsong/Shares/
+  
+  
+  find Book/ -type d -exec chmod 775 {} \\;
+  
+  ln -s /Users/evatlsong/Library/Mobile\\ Documents/com~apple~CloudDocs/ssh ~/.ssh
+  
+  
+  docker container run -p 8080:80 --name nginx-hello -d -v "$PWD"/www:/usr/share/nginx/html nginx
+  
+  docker container run -p 8080:80 --name nginx-learn -d -v $PWD:/usr/share/nginx/html -v /etc/letsencrypt:/etc/letsencrypt nginx
+  
+  docker run --name=ss -p 8388:8388 -d tommylau/shadowsocks -s 0.0.0.0 -p 8388 -k 19840718 -m rc4-md5
+  
+  
+  letsencrypt certonly --webroot -w /home/ubuntu/html -d learn.google.com
+  
+  IMPORTANT NOTES:
+   - Congratulations! Your certificate and chain have been saved at
+     /etc/letsencrypt/live/learn.evatlsong.com/fullchain.pem. Your cert
+     will expire on 2017-06-15. To obtain a new version of the
+     certificate in the future, simply run Let's Encrypt again.
+   - If you like Let's Encrypt, please consider supporting our work by:
+  
+     Donating to ISRG / Let's Encrypt:   https://letsencrypt.org/donate
+     Donating to EFF:                    https://eff.org/donate-le
+'''
+tags: []
+isStarred: false
+isTrashed: false

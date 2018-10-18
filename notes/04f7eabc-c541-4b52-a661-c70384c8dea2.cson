@@ -1,0 +1,21 @@
+createdAt: "2018-10-18T05:27:02.386Z"
+updatedAt: "2018-10-18T05:27:40.266Z"
+type: "MARKDOWN_NOTE"
+folder: "2d90bb286c7337ef5d47"
+title: "spring security"
+content: '''
+  spring security
+  
+  AbstractAuthenticationProcessingFilter 登陆验证拦截器
+  
+  Spring Security
+  重载WebSecurityconfigurerAdapter的configure()方法
+  configure(WebSecurity).   通过重载 配置Spring Security的Filter链
+  configure(HttpSecurity).   通过重载 配置如何通过拦截器保护请求
+  configure(AuthenticationManagerBuilder)   通过重载 配置user-detail服务
+  
+  
+'''
+tags: []
+isStarred: false
+isTrashed: false

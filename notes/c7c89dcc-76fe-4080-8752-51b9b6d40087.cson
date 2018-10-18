@@ -1,0 +1,24 @@
+createdAt: "2018-10-18T05:13:02.511Z"
+updatedAt: "2018-10-18T05:25:10.343Z"
+type: "MARKDOWN_NOTE"
+folder: "2d90bb286c7337ef5d47"
+title: "activiti"
+content: '''
+  activiti
+  
+  owner 是 A 把某个任务交给 B 待办后 A 就是此任务的 owner, B 变成了 assines
+  
+  history查询 包括运行中的流程
+  
+  history level 设为 full 流程历史中才有 流程变量
+  
+  org.activiti.app.rest.runtime.RelatedContentResource涉及到了contentstorage
+  DMN是英文Decision Model and Notation的缩写，直译意为决策模型与图形
+  
+  form variable scope
+  
+  
+'''
+tags: []
+isStarred: false
+isTrashed: false

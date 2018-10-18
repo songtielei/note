@@ -1,0 +1,15 @@
+createdAt: "2018-10-18T05:28:51.531Z"
+updatedAt: "2018-10-18T05:29:01.179Z"
+type: "MARKDOWN_NOTE"
+folder: "2d90bb286c7337ef5d47"
+title: "iptables"
+content: '''
+  iptables
+  
+  iptables —list
+  iptables -I INPUT -s 192.168.60.146 -j DROP
+  iptables -D INPUT -s 192.168.60.146 -j DROP
+'''
+tags: []
+isStarred: false
+isTrashed: false

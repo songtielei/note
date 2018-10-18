@@ -1,0 +1,47 @@
+createdAt: "2018-10-18T05:21:18.085Z"
+updatedAt: "2018-10-18T05:29:33.592Z"
+type: "MARKDOWN_NOTE"
+folder: "2d90bb286c7337ef5d47"
+title: "kubernetes"
+content: '''
+  kubernetes
+  
+  sudo kubeadm init --ignore-preflight-errors all --config kubeadmInitconfig.yaml
+  
+  sudo swapoff -a
+  
+  journalctl -xeu kubelet.service
+  
+  In order to permanently disable swap space in Linux, open /etc/fstab file, search for the swap line and comment the entire line by adding a # (hashtag) sign in front of the line, as shown in the below screenshot.
+  
+  error: failed to run Kubelet: failed to create kubelet: misconfiguration: kubelet cgroup driver: "cgroupfs" is different from docker cgroup driver: "syste
+  
+  
+     Loaded: loaded (/lib/systemd/system/kubelet.service; enabled; vendor preset: enabled)
+    Drop-In: /etc/systemd/system/kubelet.service.d
+    
+    
+    
+  service 通过标签选择器 选择pod 
+  node 既可以是物理机 也可以是虚拟机 
+  pod 运行在node中 具有标签 
+  每个pod里运行一个pause容器 pod中的其他容器共享 pause容器的网络栈与volume挂载卷 
+  
+  节点分master节点与工作节点 
+  master节点 
+  kubernetes api server 
+  kubernetes controller manager 
+  kubernetes scheduler 
+  etcd server 
+  
+  工作节点 
+  kubelet  
+  kube-proxy 
+  docker engine 
+  
+  
+  build/run.sh make cross KUBE_FASTBUILD=true ARCH=amd64
+'''
+tags: []
+isStarred: false
+isTrashed: false

@@ -1,0 +1,13 @@
+createdAt: "2018-10-18T05:17:46.857Z"
+updatedAt: "2018-10-18T05:17:49.642Z"
+type: "MARKDOWN_NOTE"
+folder: "2d90bb286c7337ef5d47"
+title: "sudo cp ca.crt /usr/local/share/ca-certificates/"
+content: '''
+  sudo cp ca.crt /usr/local/share/ca-certificates/
+  sudo update-ca-certificates
+  sudo service docker restart
+'''
+tags: []
+isStarred: false
+isTrashed: false

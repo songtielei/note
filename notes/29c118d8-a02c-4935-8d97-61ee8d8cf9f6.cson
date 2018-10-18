@@ -1,0 +1,17 @@
+createdAt: "2018-10-18T05:24:12.060Z"
+updatedAt: "2018-10-18T05:24:20.599Z"
+type: "MARKDOWN_NOTE"
+folder: "2d90bb286c7337ef5d47"
+title: "cfssl"
+content: '''
+  cfssl
+  
+  curl -s -L -o ~/bin/cfssl https://pkg.cfssl.org/R1.2/cfssl_linux-amd64
+   
+  curl -s -L -o ~/bin/cfssljson https://pkg.cfssl.org/R1.2/cfssljson_linux-amd64
+  
+  cfssl gencert -ca=ca.pem -ca-key=ca-key.pem -config=ca-config.json -profile=server server.json | cfssljson -bare server
+'''
+tags: []
+isStarred: false
+isTrashed: false

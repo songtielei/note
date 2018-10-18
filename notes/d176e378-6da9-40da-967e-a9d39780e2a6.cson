@@ -1,0 +1,22 @@
+createdAt: "2018-10-18T05:29:49.189Z"
+updatedAt: "2018-10-18T05:30:18.602Z"
+type: "MARKDOWN_NOTE"
+folder: "2d90bb286c7337ef5d47"
+title: "ubuntu"
+content: '''
+  ubuntu
+  
+  sed -i s/cn.archive.ubuntu.com/mirrors.ustc.edu.cn/g /etc/apt/sources.list && sed -i s/security.ubuntu.com/mirrors.ustc.edu.cn/g /etc/apt/sources.list && apt-get update 
+  
+  
+  sudo sed -i 's|http://us.|http://|g' /etc/apt/sources.list
+  
+  ubuntu 16 ssh 免密码登陆
+  sudo apt install openssh-server
+  ssh-copy-id -i id_rsa.pub ubuntu@192.168.1.10
+  /etc/ssh/sshd-config PasswordAuthentication yes 取消注释 yes 改为no
+  
+'''
+tags: []
+isStarred: false
+isTrashed: false

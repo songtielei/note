@@ -1,0 +1,59 @@
+createdAt: "2018-10-18T05:32:22.509Z"
+updatedAt: "2018-10-18T05:36:57.416Z"
+type: "MARKDOWN_NOTE"
+folder: "2d90bb286c7337ef5d47"
+title: "solr"
+content: '''
+  solr
+  
+  bin/solr start -c -s /home/evatlsong/Data/node1/
+  bin/solr stop -all
+  
+  bin/solr create -c resource -d /home/evatlsong/Config/nerc/ -n nercConfig
+  
+  bin/solr zk upconfig -z localhost:9983 -n nercConfig -d /home/evatlsong/Config/nerc/
+  
+  bin/solr zk ls -r /collections -z localhost:9983
+  
+  配置dih时 要注意solrconfig.xml
+  <lib dir="${solr.install.dir:../../../..}/dist/" regex="solr-dataimporthandler-.*\\.jar" />
+  
+  solr home加上lib里面放上database driver
+  
+  添加分词时要把jar包放入solr home lib目录
+  
+  
+  bin/solr start -c -s /soft/solr/data/node1/
+  bin/solr stop -all
+  
+  bin/solr create -c resource -d /soft/solr/config/nerc/ -n nercConfig
+  
+  bin/solr zk upconfig -z localhost:9983 -n nercConfig -d /soft/solr/config/nerc/
+  
+  
+  solr dih
+  
+  solrconfig.xml
+  
+  <lib dir="${solr.install.dir:../../../..}/dist/" regex="solr-dataimporthandler-.*/.jar" />
+  <lib dir="${solr.install.dir:../../../..}/dist/" regex="mysql-connector-java-.*/.jar" />
+  
+  
+    <requestHandler name="/dataimport" class="org.apache.solr.handler.dataimport.DataImportHandler">
+      <lst name="defaults">
+        <str name="config">db-data-config.xml</str>
+      </lst>
+    </requestHandler>
+  
+  
+  // 注意 class 要用全类名
+  
+  
+  
+  单体应用
+  ./solr create -c core-bt
+  
+'''
+tags: []
+isStarred: false
+isTrashed: false

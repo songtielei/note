@@ -1,0 +1,32 @@
+createdAt: "2018-10-18T05:28:30.495Z"
+updatedAt: "2018-10-18T05:28:40.171Z"
+type: "MARKDOWN_NOTE"
+folder: "2d90bb286c7337ef5d47"
+title: "spring"
+content: '''
+  spring
+  
+  DefaultListableBeanFactory 保存着所有bean的信息
+  /** Map of bean definition objects, keyed by bean name */ private final Map<String, BeanDefinition> beanDefinitionMap = new ConcurrentHashMap<String, BeanDefinition>(256);
+  
+  系统启动时 不会初始化所有的bean bean是在调用getBean()时初始化的
+  
+  每个servlet有一个servletconfig
+  getservletconfig.getinitparameternames();
+  每个web应用有一个servletcontext
+  getservletcontext.getinitparameternames();
+  
+  
+  jsp作为视图是用request.setAttribute()设置属性 jsp页面中用el表达式获得属性
+  
+  过滤器应用于输出流时 注意事项
+  
+  
+  refresh
+  obtainFreshBeanFactory
+  refreshBeanFactory
+  loadBeanDefinitions
+'''
+tags: []
+isStarred: false
+isTrashed: false

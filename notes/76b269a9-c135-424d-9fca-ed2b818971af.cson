@@ -1,0 +1,22 @@
+createdAt: "2018-10-18T05:12:30.975Z"
+updatedAt: "2018-10-18T05:12:33.420Z"
+type: "MARKDOWN_NOTE"
+folder: "2d90bb286c7337ef5d47"
+title: "pom 分析"
+content: '''
+  pom 分析
+  首先检查修改的文件
+  
+  生成调用关系
+  从调用链顶端开始执行
+  注意循环调用
+  是引用 jar包 还是可执行jar包
+  可执行jar包要执行部署
+  
+  同时多个文件的修改问题
+  
+  
+'''
+tags: []
+isStarred: false
+isTrashed: false

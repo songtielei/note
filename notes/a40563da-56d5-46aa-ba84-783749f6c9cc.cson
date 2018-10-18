@@ -1,0 +1,17 @@
+createdAt: "2018-10-17T08:05:53.013Z"
+updatedAt: "2018-10-17T08:10:22.021Z"
+type: "MARKDOWN_NOTE"
+folder: "2d90bb286c7337ef5d47"
+title: "vimwiki"
+content: '''
+  vimwiki
+  [GitHub - vimwiki/vimwiki: Personal Wiki for Vim](https://github.com/vimwiki/vimwiki)
+  ## issue
+  生成的 html 比较简陋
+  不支持 markdown 导出为html
+  可以考虑同步到 hexo 目录 生成html
+  可以考虑以后使用
+'''
+tags: []
+isStarred: false
+isTrashed: false

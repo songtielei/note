@@ -1,13 +1,35 @@
 createdAt: "2018-10-17T06:33:57.137Z"
-updatedAt: "2018-10-17T06:34:00.454Z"
+updatedAt: "2018-10-18T05:21:47.183Z"
 type: "MARKDOWN_NOTE"
 folder: "2d90bb286c7337ef5d47"
-title: "—keep-cr 解决 windows 换行符问题"
+title: "git 用法"
 content: '''
-  git checkout local
-  git format-patch -M master
-  # —keep-cr 解决 windows 换行符问题
-  git am --keep-cr 0003-change.patch
+  git 用法
+  
+  git pull -r // 拉取并衍合
+  
+  若有冲突首先解决冲突 然后执行下面两步 执行git rebase —continue 后 若又有冲突 则继续执行此流程
+  git add . 
+  git rebase —continue 
+  
+  上面执行完后 推送到服务器
+  git push origin develop
+  
+  
+  ```
+    git checkout local
+    git format-patch -M master
+    # —keep-cr 解决 windows 换行符问题
+    git am --keep-cr 0003-change.patch
+    
+    # 
+    git config core.filemode false
+  ```
+  
+  remote: HTTP Basic: Access denied
+  fatal: Authentication failed for 'https://gitlab.com/myname/myproject'
+  
+  git config --unset credential.helper 
   
 '''
 tags: []

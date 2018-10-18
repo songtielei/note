@@ -1,0 +1,15 @@
+createdAt: "2018-10-18T05:20:15.849Z"
+updatedAt: "2018-10-18T05:20:20.983Z"
+type: "MARKDOWN_NOTE"
+folder: "2d90bb286c7337ef5d47"
+title: "mysql"
+content: '''
+  mysql
+  
+  show variables like '%time_zone%';  
+  
+  select now();
+'''
+tags: []
+isStarred: false
+isTrashed: false

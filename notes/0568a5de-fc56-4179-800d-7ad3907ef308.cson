@@ -1,0 +1,16 @@
+createdAt: "2018-10-18T05:23:09.139Z"
+updatedAt: "2018-10-18T05:23:52.207Z"
+type: "MARKDOWN_NOTE"
+folder: "2d90bb286c7337ef5d47"
+title: "fastdfs"
+content: '''
+  fastdfs
+  
+    fastdfs no space to upload file, free space: MB is too small
+    reserved_storage_space = 10%
+    storage server 上保留的空间，保证系统或其他应用需求空间。可以用绝对值或者百分比。只要同组内任一storage server剩余空间小于这个值，就不允许再上传文件。
+  
+'''
+tags: []
+isStarred: false
+isTrashed: false

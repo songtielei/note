@@ -1,0 +1,18 @@
+createdAt: "2018-10-18T05:09:27.516Z"
+updatedAt: "2018-10-18T05:09:30.464Z"
+type: "MARKDOWN_NOTE"
+folder: "2d90bb286c7337ef5d47"
+title: "passStore"
+content: '''
+  passStore
+  
+  
+  gpg
+  导出私钥
+  gpg --armor --output private-key.txt --export-secret-keys evatlsong
+  导出公钥
+  gpg --armor --output public-key.txt --export evatlsong
+'''
+tags: []
+isStarred: false
+isTrashed: false

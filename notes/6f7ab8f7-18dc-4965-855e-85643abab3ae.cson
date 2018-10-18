@@ -1,0 +1,203 @@
+createdAt: "2018-10-18T05:18:16.041Z"
+updatedAt: "2018-10-18T05:18:18.654Z"
+type: "MARKDOWN_NOTE"
+folder: "2d90bb286c7337ef5d47"
+title: "Okay, the file exists."
+content: '''
+  shell
+  
+  Sometimes you need a dollar sign to reference a variable (echo $variable) and
+  sometimes you need to not have a dollar sign (variable=foo). Sometimes you
+  need curly braces around the name (echo ${variable}bar) and sometimes it
+  doesn’t matter (echo $variable bar). There is logic behind these apparently
+  arbitrary rules, so don’t panic; it is all perfectly comprehensible.
+  
+  ➤➤ Explicit definition: VAR=value
+  ➤➤ Read: read VAR
+  ➤➤ Command substitution: VAR=`date`, VAR=$(date)
+  
+  No spaces are permitted around the equal sign.
+  
+  you can also use read to read in multiple
+  variables in one go:
+  echo -n “Please enter your first name and last name: “
+  read firstname lastname
+  echo “Hello, $firstname. How is the $lastname family?”
+  
+  Reading from Files
+  read message < /etc/motd
+  
+  command substitution: Var=`date`, Var=$(date)
+  Most shells also allow for the VAR=$(date) syntax, but the original Bourne shell
+  does not.
+  
+  Positional Parameters
+  $0 is the name of the command itself, $1 is the first parameter, $2 is the second, and so on.
+  The $# variable tells a script how many parameters it was called with
+  
+  Return Codes
+  $ grep nutty /etc/hosts
+  $ echo $?
+  
+  Unsetting Variables
+  unset myvar
+  
+  $$ is another special variable which provides the Process ID of this shell itself.
+  
+  
+  while read -p “What file do you want to test? “ filename
+  do
+  if [ ! -e “$filename” ]; then
+  echo “The file does not exist.”
+  continue
+  fi
+  # Okay, the file exists.
+  ls -ld “$filename”
+  if [ -L “$filename” ]; then
+  echo “$filename is a symbolic link”
+  elif [ -f “$filename” ]; then
+  echo “$filename is a regular file.”
+  elif [ -b “$filename” ]; then
+  echo “$filename is a block device”
+  elif [ -c “$filename” ]; then
+  echo “$filename is a character device”
+  elif [ -d “$filename” ]; then
+  echo “$filename is a directory”
+  elif [ -p “$filename” ]; then
+  echo “$filename is a named pipe”
+  elif [ -S “$filename” ]; then
+  echo “$filename is a socket”
+  else
+  echo “I don’t know what kind of file that is. Is this a Linux system?”
+  fi
+  done
+  
+  while read -p “What file do you want to test? “ filename
+  do
+  if [ ! -e “$filename” ]; then
+  echo “The file does not exist.”
+  continue
+  fi
+  # Okay, the file exists.
+  ls -ld “$filename”
+  if [ -r “$filename” ]; then
+  echo “$filename is readable.”
+  fi
+  if [ -w “$filename” ]; then
+  echo “$filename is writeable”
+  fi
+  if [ -x “$filename” ]; then
+  echo “$filename is executable”
+  fi
+  done
+  
+  ls -ld $filename
+  if [ -O $filename ]; then
+  echo “You own $filename”
+  else
+  echo “You don’t own $filename”
+  fi
+  if [ -G $filename ]; then
+  echo “Your group owns $filename”
+  else
+  echo “Your group doesn’t own $filename”
+  fi
+  done
+  
+  ls -ld $filename
+  if [ -u $filename ]; then
+  echo “$filename will run as user \\”`stat --printf=%U $filename`\\””
+  fi
+  if [ -g $filename ]; then
+  echo “$filename will run as group \\”`stat --printf=%G $filename`\\””
+  fi
+  
+  String comparison tests
+  
+  The string comparisons < and > only work within the [[ ... ]] compound command. You can use the ==
+  and != tests within either a single or double bracket test, but the single bracket test is the only one that
+  works with a single equal sign (=). The reason for this complexity is to maintain compatibility with the
+  Bourne shell while adding the more powerful [[ command.
+  
+  The
+  bash shell, and others, will also accept a double ==, which is more in line with
+  other languages (notably C). However, this is not compliant with the POSIX
+  standard, and the traditional Bourne shell does not recognize this syntax. It is
+  best to use the single = as that is understood everywhere.
+  
+  The final two string tests are similar to the -s test for fi les. The -z test returns true if the string has
+  zero length, while -n returns true if the string has nonzero length. Because you are testing a potentially
+  empty string, you will need to put quotes around the variable name; otherwise, the test [ -z
+  $input ] would reduce to [ -z ], which is not syntactically valid. Only [ -z “” ] is syntactically
+  valid.
+  
+  input=””
+  while [ -z “$input” ]; do
+  read -p “Please give your input: “ input
+  done
+  echo “Thank you for saying $input”
+  
+  Numerical Tests
+  
+  Six numerical comparisons are available. The -eq test returns true if the two numbers are equal,
+  while -ne returns true if they are not equal. -lt and -gt respectively are used for comparing if one
+  number is less than or greater than the other. If you need to test if the values are less than or equal
+  to, -le does that test, and -ge does the complementary test to see if one number is greater or equal
+  to the other.
+  
+  #!/bin/bash
+  MAX=50
+  guess=-1
+  let answer=($RANDOM % $MAX)
+  let answer+=1
+  ceiling=$MAX
+  floor=0
+  guesses=0
+  while [ “$guess” -ne “$answer” ]
+  do
+  echo “The magic number is between $floor and $ceiling.”
+  echo -en “ Make your guess:”
+  read guess
+  guesses=`expr $guesses + 1`
+  102 ❘ chapter 5 condiTionaL execUTion
+  if [ “$guess” -lt “$answer” ]; then
+  echo “$guess is too low”
+  if [ “$guess” -gt “$floor” ]; then
+  floor=`expr $guess + 1`
+  fi
+  fi
+  if [ “$guess” -gt “$answer” ]; then
+  echo “$guess is too high”
+  if [ “$guess” -lt “$ceiling” ]; then
+  ceiling=`expr $guess - 1`
+  fi
+  fi
+  done
+  echo “You got it in $guesses guesses!”
+  
+  Combining Tests
+  It is possible to combine tests by using the && and || operators. These perform a Logical AND and
+  Logical OR, respectively.
+  
+  
+  The entire while
+  read/do/done command is treated by the shell as a single command (which it is) so the redirection
+  from $filename works in exactly the same way as read < $filename.
+  
+  #!/bin/bash
+  filename=$1
+  if [ ! -r “$filename” ]; then
+  echo “Error: Can not read $filename”
+  exit 1
+  fi
+  echo “Contents of file ${filename}:”
+  while read myline
+  do
+  echo “$myline”
+  done < $filename
+  echo “End of ${filename}.”
+  echo “Checksum: `md5sum $filename`”
+'''
+tags: []
+isStarred: false
+isTrashed: false

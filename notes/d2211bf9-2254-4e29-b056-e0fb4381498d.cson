@@ -1,14 +1,17 @@
 createdAt: "2018-10-17T06:32:02.793Z"
-updatedAt: "2018-10-17T06:32:34.915Z"
+updatedAt: "2018-10-17T07:26:01.589Z"
 type: "MARKDOWN_NOTE"
 folder: "2d90bb286c7337ef5d47"
 title: "rsync-time-backup"
 content: '''
   rsync-time-backup
+  ```
+    ./rsync_tmbackup.sh -p 22 /Users/evatlsong/ui-tech openwrt:/mnt/share/evatlsong/ui-tech /Users/evatlsong/system/script/exclude_file
   
-  ./rsync_tmbackup.sh -p 22 /Users/evatlsong/ui-tech openwrt:/mnt/share/evatlsong/ui-tech /Users/evatlsong/system/script/exclude_file
+    ./rsync_tmbackup.sh -p 22 /Users/evatlsong/ui-tech openwrt:/mnt/share/evatlsong/ui-tech /Users/evatlsong/system/script/exclude_file
+    ./rsync_tmbackup.sh pi@192.168.1.220:/media/pi/WD/evatlsong /Volumes/repository/backup/evatlsong
   
-  ./rsync_tmbackup.sh -p 22 /Users/evatlsong/ui-tech openwrt:/mnt/share/evatlsong/ui-tech /Users/evatlsong/system/script/exclude_file
+  ```
 '''
 tags: []
 isStarred: false

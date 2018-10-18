@@ -1,14 +1,20 @@
 createdAt: "2018-10-17T06:20:44.945Z"
-updatedAt: "2018-10-17T06:20:48.562Z"
+updatedAt: "2018-10-18T05:26:44.493Z"
 type: "MARKDOWN_NOTE"
 folder: "2d90bb286c7337ef5d47"
-title: "Cleanup exited processes: docker rm $(docker ps -q -f status=exited)"
+title: "docker 用法"
 content: '''
-  1. Cleanup exited processes: docker rm $(docker ps -q -f status=exited)
-  2.  
-  3. Cleanup dangling volumes: docker volume rm $(docker volume ls -qf dangling=true)
-  4.  
-  5. Cleanup dangling images: docker rmi $(docker images --filter "dangling=true" -q --no-trunc) 
+  docker 用法
+  ```
+    # Cleanup exited processes:
+    docker rm $(docker ps -q -f status=exited)
+    # Cleanup dangling volumes:
+    docker volume rm $(docker volume ls -qf dangling=true)
+    # Cleanup dangling images:
+    docker rmi $(docker images --filter "dangling=true" -q --no-trunc)
+    
+    docker image rm $(docker image ls "kbastani/*" -q)
+  ```
 '''
 tags: []
 isStarred: false

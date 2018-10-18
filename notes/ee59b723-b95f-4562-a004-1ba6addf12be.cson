@@ -1,0 +1,15 @@
+createdAt: "2018-10-18T05:20:54.025Z"
+updatedAt: "2018-10-18T05:21:02.020Z"
+type: "MARKDOWN_NOTE"
+folder: "2d90bb286c7337ef5d47"
+title: "ansible"
+content: '''
+  ansible
+  
+  ansible-playbook -i hosts/hosts -u root cluster.yml --private-key=~/.ssh/id_rsa_evatlsong
+  
+  ansible-playbook -i hosts/hosts -u root cluster.yml --private-key=~/.ssh/id_rsa_evatlsong
+'''
+tags: []
+isStarred: false
+isTrashed: false

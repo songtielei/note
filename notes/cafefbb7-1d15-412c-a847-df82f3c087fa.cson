@@ -1,0 +1,22 @@
+createdAt: "2018-10-18T05:07:25.712Z"
+updatedAt: "2018-10-18T05:07:31.826Z"
+type: "MARKDOWN_NOTE"
+folder: "2d90bb286c7337ef5d47"
+title: "hexo"
+content: '''
+  hexo
+  
+  docker
+  使用alpine
+  from alpine
+  加上nodejs
+  加上hexo
+  挂载目录
+  
+  docker run -it --rm --name my-running-script -v "$PWD":/usr/src/app -w /usr/src/app node:6.10-alpine node bin/node-echo /usr/src/app/package.json /usr/src/app/lib/
+  
+  docker container run -p 4000:80 --name hexo-server -d -v "$PWD"/source:/Hexo/source evatlsong/hexo:6.10 evatlsong evatlsong@gmail.com s
+'''
+tags: []
+isStarred: false
+isTrashed: false

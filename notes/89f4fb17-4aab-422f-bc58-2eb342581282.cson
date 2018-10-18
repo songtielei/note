@@ -1,5 +1,5 @@
 createdAt: "2018-10-17T06:29:07.733Z"
-updatedAt: "2018-10-17T06:29:12.564Z"
+updatedAt: "2018-10-17T07:26:16.327Z"
 type: "SNIPPET_NOTE"
 folder: "2d90bb286c7337ef5d47"
 title: ""
@@ -8,10 +8,7 @@ snippets: [
   {
     name: ""
     mode: "text"
-    content: '''
-      ./rsync_tmbackup.sh pi@192.168.1.220:/media/pi/WD/evatlsong /Volumes/repository/backup/evatlsong
-      
-    '''
+    content: ""
   }
 ]
 tags: []

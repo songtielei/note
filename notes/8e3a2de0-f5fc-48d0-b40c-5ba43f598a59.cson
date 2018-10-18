@@ -1,0 +1,17 @@
+createdAt: "2018-10-18T05:10:18.766Z"
+updatedAt: "2018-10-18T05:10:30.908Z"
+type: "MARKDOWN_NOTE"
+folder: "2d90bb286c7337ef5d47"
+title: "树莓派3B+"
+content: '''
+  树莓派3B+ 
+  
+  wifi 5G连接
+  新烧的Raspbian 系统，一开始需要设置wifi的一些配置，其中会选择一个国家（set country）,一开始选择的是CN（中国），发现只能连接2.4G的网络，5G的网络连接不上，这很奇怪，
+  因为一开始没配置国家的时候，看见过扫到了5G网络名称，扫了几次也没成功，sudo vim /etc/wpa_supplicant/wpa_supplicant.conf 手动加了5G的SSID也不行，怀疑和国家有关，就在wpa_supplicant.conf里，
+  把CN改成了US，重启后，5G就可以连接上了，但是...,2.4G网络又不见了，有点奇怪，暂时先用着吧。如果有人看到这篇文章，知道答案的可以告诉我一下。
+  
+'''
+tags: []
+isStarred: false
+isTrashed: false
