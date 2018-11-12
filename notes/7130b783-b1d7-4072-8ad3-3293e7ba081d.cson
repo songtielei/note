@@ -1,0 +1,58 @@
+createdAt: "2018-11-11T13:37:48.206Z"
+updatedAt: "2018-11-12T06:36:25.361Z"
+type: "MARKDOWN_NOTE"
+folder: "2d90bb286c7337ef5d47"
+title: "raspberrypi"
+content: '''
+  raspberrypi
+  
+      sudo apt-get install ttf-wqy-zenhei
+      sudo raspi-config
+      sudo reboot
+      sudo chown -R pi:pi /media/pi
+      vi /etc/apt/sources.list
+  ```
+  #deb http://raspbian.raspberrypi.org/raspbian/ stretch main contrib non-free rpi
+  # Uncomment line below then 'apt-get update' to enable 'apt-get source'
+  #deb-src http://raspbian.raspberrypi.org/raspbian/ stretch main contrib non-free rpi
+  deb http://mirrors.shu.edu.cn/raspbian/raspbian/ stretch main contrib non-free rpi
+  ```
+      sudo vi /etc/wpa_supplicant/wpa_supplicant.conf
+  ```
+  ctrl_interface=DIR=/var/run/wpa_supplicant GROUP=netdev
+  update_config=1
+  country=GB
+  
+  network={
+          ssid="OpenWrt"
+          psk="19840718"
+          key_mgmt=WPA-PSK
+  }
+  ```
+      sudo reboot
+  
+      sudo apt-get update
+      sudo apt-get install nfs-common nfs-kernel-server
+      vi /etc/exports
+  
+  ```
+  # /etc/exports: the access control list for filesystems which may be exported
+  #               to NFS clients.  See exports(5).
+  #
+  # Example for NFSv2 and NFSv3:
+  # /srv/homes       hostname1(rw,sync,no_subtree_check) hostname2(ro,sync,no_subtree_check)
+  #
+  # Example for NFSv4:
+  # /srv/nfs4        gss/krb5i(rw,sync,fsid=0,crossmnt,no_subtree_check)
+  # /srv/nfs4/homes  gss/krb5i(rw,sync,no_subtree_check)
+  #
+  /home/pi/Sync *(rw,all_squash,insecure,no_subtree_check)
+  /media/pi/WD *(rw,all_squash,insecure,no_subtree_check)
+  ```
+  sudo /etc/init.d/nfs-kernel-server restart
+  
+  mount -t nfs -o nolock raspberrypi:/media/pi/WD /Users/evatlsong/Shares
+'''
+tags: []
+isStarred: false
+isTrashed: false

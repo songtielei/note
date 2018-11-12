@@ -1,5 +1,5 @@
 createdAt: "2018-10-18T05:13:02.511Z"
-updatedAt: "2018-10-18T05:25:10.343Z"
+updatedAt: "2018-10-24T01:50:46.411Z"
 type: "MARKDOWN_NOTE"
 folder: "2d90bb286c7337ef5d47"
 title: "activiti"
@@ -17,7 +17,25 @@ content: '''
   
   form variable scope
   
+  HistoricTaskInstanceQuery query = historyService.createHistoricTaskInstanceQuery();
+  // 对查询性能影响特别大
+  query.includeProcessVariables();
   
+  // 改用循环中查询
+  ```
+  Map<String, Object> variable;
+      // 判断任务是否结束 改用不同查询方法
+      if (task.getEndTime() != null) {
+          HistoricVariableInstanceQuery historicVariableInstanceQuery = historyService.createHistoricVariableInstanceQuery();
+          List<HistoricVariableInstance> historicVariableInstanceList = historicVariableInstanceQuery.processInstanceId(task.getProcessInstanceId()).list();
+          variable = new HashMap<>();
+          for (HistoricVariableInstance restVariable : historicVariableInstanceList) {
+              variable.put(restVariable.getVariableName(), restVariable.getValue());
+          }
+      } else {
+          variable = taskService.getVariables(task.getId());
+      }
+  ```
 '''
 tags: []
 isStarred: false

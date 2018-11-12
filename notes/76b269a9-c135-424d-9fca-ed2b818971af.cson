@@ -1,5 +1,5 @@
 createdAt: "2018-10-18T05:12:30.975Z"
-updatedAt: "2018-10-18T05:12:33.420Z"
+updatedAt: "2018-10-19T09:20:58.069Z"
 type: "MARKDOWN_NOTE"
 folder: "2d90bb286c7337ef5d47"
 title: "pom 分析"
@@ -16,6 +16,24 @@ content: '''
   同时多个文件的修改问题
   
   
+  
+  找到需要编译的 (本身有修改 引用的有修改)
+  
+  List<String> change;
+  List<String> remain;
+  list dir
+    change = haveChanged;
+    remain = dir - haveChanged;
+    
+    解析 change 下的 pom 找到 groupId artfactid
+    在remain目录中查找 引用到的 artfactid
+    若有引用则把此remain加入change 
+    
+    生成依赖树
+    标记每个节点是否发布
+    
+    发布时遍历此依赖树
+    
 '''
 tags: []
 isStarred: false

@@ -1,0 +1,23 @@
+createdAt: "2018-10-19T06:40:12.408Z"
+updatedAt: "2018-10-19T06:47:25.998Z"
+type: "MARKDOWN_NOTE"
+folder: "2d90bb286c7337ef5d47"
+title: "private data sync"
+content: '''
+  private data sync
+  
+  使用树莓派挂接磁盘作为中心存储
+  使用 rsync-time-backup 同步到本地硬盘作为备份
+  
+  
+  使用syncthing同步android数据到 树莓派接收目录
+  树莓派只接收 
+  使用rsync从接收目录同步到中心库
+  
+  使用rsync 从电脑同步数据到树莓派中心库
+  
+  
+'''
+tags: []
+isStarred: false
+isTrashed: false

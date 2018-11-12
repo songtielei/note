@@ -1,0 +1,32 @@
+createdAt: "2018-10-23T08:00:40.855Z"
+updatedAt: "2018-10-24T10:39:52.500Z"
+type: "MARKDOWN_NOTE"
+folder: "2d90bb286c7337ef5d47"
+title: "数据结构与算法分析 java语言描述"
+content: '''
+  数据结构与算法分析 java语言描述
+  
+  ## 表,栈和队列
+  ### Java Collections API 中的表
+  #### Collection 接口
+  Collection 接口扩展了 Iterable 接口。实现 Iterable 接口的那些类可以拥有增强的 for 循环
+  #### Iterator 接口
+  实现 Iterator 接口的集合必须提供一个成为 iterator 的方法，改方法返回一个 Iterator 类型的对象
+  Iterator 的 remove 方法的主要优点在于， Collection 的 remove 方法必须首先找出要删除的项
+  当直接使用 Iterator(而不是通过一个增强的 for 循环间接使用)时，如果对正在被迭代的集合进行结构上的改变(add, remove, clear)，那么迭代器就不再合法(其后使用该迭代器时抛出 ConcurrentModificationException)，如果迭代器调用了自己的 remove 方法，这个迭代器仍然是合法的
+  
+  
+  ## 树
+  ### 预备知识
+  一棵树是一些节点的集合
+  对任意节点 $n_i$, $n_i$的深度(depth)为从根到$n_i$的唯一的路径的长
+  根的深度为0
+  $n_i$的高(height)是从$n_i$到一片树叶的最长路径的长
+  
+  ### AVL树
+  一棵AVL树是其每个节点的左子树和右子树的高度最多差1的二叉查找树(空树的高度定义为-1)
+  
+'''
+tags: []
+isStarred: false
+isTrashed: false
