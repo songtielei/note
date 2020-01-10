@@ -1,5 +1,5 @@
 createdAt: "2018-10-19T06:40:12.408Z"
-updatedAt: "2018-10-19T06:47:25.998Z"
+updatedAt: "2018-12-05T17:31:45.244Z"
 type: "MARKDOWN_NOTE"
 folder: "2d90bb286c7337ef5d47"
 title: "private data sync"
@@ -9,13 +9,24 @@ content: '''
   使用树莓派挂接磁盘作为中心存储
   使用 rsync-time-backup 同步到本地硬盘作为备份
   
+  rsync pi@192.168.1.220:/media/pi/WD/unchange /Volumes/repository/backup/unchange
+  //rsync pi@192.168.1.220:/media/pi/WD/SourceCode /Volumes/repository/backup/SourceCode
+  //rsync pi@192.168.1.220:/media/pi/WD/ui-tech /Volumes/repository/backup/ui-tech
+  
+  ./rsync_tmbackup.sh pi@192.168.1.220:/media/pi/WD/evatlsong /Volumes/repository/backup/evatlsong
+  ./rsync_tmbackup.sh /home/user/evatlsong/SourceCode pi@192.168.1.220:/media/pi/WD/SourceCode
+  ./rsync_tmbackup.sh /home/user/evatlsong/ui-tech pi@192.168.1.220:/media/pi/WD/ui-tech
+  
   
   使用syncthing同步android数据到 树莓派接收目录
+  rsync pi@192.168.1.220:/media/pi/WD/Android pi@192.168.1.220:/media/pi/WD/Android
   树莓派只接收 
   使用rsync从接收目录同步到中心库
   
   使用rsync 从电脑同步数据到树莓派中心库
   
+  
+  find ./ -type d -name target | xargs rm -r
   
 '''
 tags: []

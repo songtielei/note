@@ -1,5 +1,5 @@
 createdAt: "2018-10-18T05:13:02.511Z"
-updatedAt: "2018-10-24T01:50:46.411Z"
+updatedAt: "2019-08-15T12:35:04.049Z"
 type: "MARKDOWN_NOTE"
 folder: "2d90bb286c7337ef5d47"
 title: "activiti"
@@ -36,7 +36,38 @@ content: '''
           variable = taskService.getVariables(task.getId());
       }
   ```
+  
+  liquibase: Waiting for changelog lock
+  启动时会先获得以下三张表的锁 若有其他锁 要先删除 
+  act_fo_databasechangeloglock
+  act_dmn_databasechangeloglock
+  databasechangeloglock
+  
+  
+  ```
+  CREATE TABLE `hibernate_sequences` (
+      `sequence_name` varchar(255) DEFAULT NULL,
+      `sequence_next_hi_value` int(11) DEFAULT NULL
+  ) ENGINE=InnoDB DEFAULT CHARSET=utf8
+  ```
+  
+  act_id_user改为视图后 重启activiti报错 因为activiti发现没有act_id_user表 所以试图创建失败无法启动 要先改回去 
+  ```
+  CREATE 
+  VIEW `act_id_user` AS
+      SELECT 
+          `acc_user`.`code` AS `ID_`,
+          1 AS `REV_`,
+          `acc_user`.`name` AS `FIRST_`,
+          `acc_user`.`real_name` AS `LAST_`,
+          `acc_user`.`email` AS `EMAIL_`,
+          'password' AS `PWD_`
+      FROM
+          `acc_user`
+  ```
+  
 '''
 tags: []
 isStarred: false
 isTrashed: false
+linesHighlighted: []

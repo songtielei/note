@@ -1,5 +1,5 @@
 createdAt: "2018-10-18T05:27:02.386Z"
-updatedAt: "2018-10-18T05:27:40.266Z"
+updatedAt: "2019-04-30T08:14:32.448Z"
 type: "MARKDOWN_NOTE"
 folder: "2d90bb286c7337ef5d47"
 title: "spring security"
@@ -14,8 +14,48 @@ content: '''
   configure(HttpSecurity).   通过重载 配置如何通过拦截器保护请求
   configure(AuthenticationManagerBuilder)   通过重载 配置user-detail服务
   
+  ```
+  @Configuration
+  @EnableResourceServer
+  public class ResourceServerConfig extends ResourceServerConfigurerAdapter {
+  
+      @Override
+      public void configure(HttpSecurity http) throws Exception {
+          http.cors().and()
+                  .csrf().disable()
+                  .exceptionHandling()
+                  .authenticationEntryPoint((request, response, authException) -> response.sendError(HttpServletResponse.SC_UNAUTHORIZED))
+              .and()
+                  .authorizeRequests()
+                  .antMatchers(HttpMethod.OPTIONS, "/**").permitAll()
+  
+                  .antMatchers("/swagger-ui.html").permitAll()
+                  .antMatchers("/webjars/**").permitAll()
+                  .antMatchers("/swagger-resources/**").permitAll()
+                  .antMatchers("/v2/api-docs/**").permitAll()
+  
+                  .anyRequest().authenticated();
+      }
+  
+      @Bean
+      public CorsFilter corsFilter() {
+          final UrlBasedCorsConfigurationSource urlBasedCorsConfigurationSource = new UrlBasedCorsConfigurationSource();
+          final CorsConfiguration corsConfiguration = new CorsConfiguration();
+          corsConfiguration.setAllowCredentials(true);
+          corsConfiguration.addAllowedOrigin("*");
+          corsConfiguration.addAllowedHeader("*");
+          corsConfiguration.addAllowedMethod("*");
+          urlBasedCorsConfigurationSource.registerCorsConfiguration("/**", corsConfiguration);
+          return new CorsFilter(urlBasedCorsConfigurationSource);
+      }
+  }
+  ```
+  
+  
+  
   
 '''
 tags: []
 isStarred: false
 isTrashed: false
+linesHighlighted: []

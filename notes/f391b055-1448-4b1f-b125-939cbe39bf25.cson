@@ -1,0 +1,29 @@
+createdAt: "2019-11-18T11:25:35.106Z"
+updatedAt: "2019-11-19T05:13:20.188Z"
+type: "MARKDOWN_NOTE"
+folder: "2d90bb286c7337ef5d47"
+title: "javascript the good parts"
+tags: []
+content: '''
+  javascript the good parts
+  
+  JavaScript中的函数就是对象
+  对象是 名/值 对的集合并拥有一个连到原型对象的  隐藏连接
+  对象字面量产生的对象连接到 Object.prototype
+  函数对象连接到 Function.prototype
+  Function.prototype 连接到 Object.prototype
+  
+  每个函数在创建时会附加两个隐藏属性: 函数的上下文和实现函数行为的代码 
+  
+  每个函数对象在创建时也随配有一个 prototype 属性 他的值是一个拥有 constructor 属性且值即为该函数的对象
+  
+  如果在一个函数前面带上 new 来调用 那么背地里将会创建一个连接到该函数的 prototype 成员的新对象 同时 this 会被绑定到那个新对象上
+  
+  
+  
+  默认情况下, 所有函数的原型属性的 __proto__ 就是 window.Object.prototype
+  缺省状态下，构造器的 prototype 属性初始为空白
+'''
+linesHighlighted: []
+isStarred: false
+isTrashed: false

@@ -1,18 +1,41 @@
 createdAt: "2018-10-18T05:09:27.516Z"
-updatedAt: "2018-10-18T05:09:30.464Z"
+updatedAt: "2019-06-25T16:25:52.668Z"
 type: "MARKDOWN_NOTE"
 folder: "2d90bb286c7337ef5d47"
 title: "passStore"
 content: '''
   passStore
+  [Pass: The Standard Unix Password Manager](https://www.passwordstore.org/)
   
+  /usr/local/Cellar/pass/1.7.3
+  
+  Bash completion has been installed to:
+    /usr/local/etc/bash_completion.d
+  
+  zsh completions have been installed to:
+    /usr/local/share/zsh/site-functions
+  
+  Emacs Lisp files have been installed to:
+    /usr/local/share/emacs/site-lisp/pass
   
   gpg
   导出私钥
   gpg --armor --output private-key.txt --export-secret-keys evatlsong
   导出公钥
   gpg --armor --output public-key.txt --export evatlsong
+  
+  
+      tree -C -l --noreport "$PREFIX/$path"
+      改成
+      tree -C -l -L 1 --noreport "$PREFIX/$path"
+      只显示一层目录
+      
+      
+  ssh-keygen -f id_rsa_songtielei
+  复制文件到剪贴板
+  pbcopy < id_rsa_songtielei.pub
 '''
 tags: []
 isStarred: false
 isTrashed: false
+linesHighlighted: []

@@ -1,17 +1,29 @@
 createdAt: "2018-10-23T08:00:40.855Z"
-updatedAt: "2018-10-24T10:39:52.500Z"
+updatedAt: "2018-12-25T03:44:41.508Z"
 type: "MARKDOWN_NOTE"
 folder: "2d90bb286c7337ef5d47"
 title: "数据结构与算法分析 java语言描述"
 content: '''
   数据结构与算法分析 java语言描述
   
+  <!-- toc -->
+  
+  - [表,栈和队列](#%E8%A1%A8%E6%A0%88%E5%92%8C%E9%98%9F%E5%88%97)
+    * [Java Collections API 中的表](#Java-Collections-API-%E4%B8%AD%E7%9A%84%E8%A1%A8)
+      + [Collection 接口](#Collection-%E6%8E%A5%E5%8F%A3)
+      + [Iterator 接口](#Iterator-%E6%8E%A5%E5%8F%A3)
+  - [树](#%E6%A0%91)
+    * [预备知识](#%E9%A2%84%E5%A4%87%E7%9F%A5%E8%AF%86)
+    * [AVL树](#AVL%E6%A0%91)
+  
+  <!-- tocstop -->
+  
   ## 表,栈和队列
   ### Java Collections API 中的表
   #### Collection 接口
   Collection 接口扩展了 Iterable 接口。实现 Iterable 接口的那些类可以拥有增强的 for 循环
   #### Iterator 接口
-  实现 Iterator 接口的集合必须提供一个成为 iterator 的方法，改方法返回一个 Iterator 类型的对象
+  实现 Iterable 接口的集合必须提供一个称为 iterator 的方法，改方法返回一个 Iterator 类型的对象
   Iterator 的 remove 方法的主要优点在于， Collection 的 remove 方法必须首先找出要删除的项
   当直接使用 Iterator(而不是通过一个增强的 for 循环间接使用)时，如果对正在被迭代的集合进行结构上的改变(add, remove, clear)，那么迭代器就不再合法(其后使用该迭代器时抛出 ConcurrentModificationException)，如果迭代器调用了自己的 remove 方法，这个迭代器仍然是合法的
   
@@ -25,6 +37,19 @@ content: '''
   
   ### AVL树
   一棵AVL树是其每个节点的左子树和右子树的高度最多差1的二叉查找树(空树的高度定义为-1)
+  
+  ## 优先队列(堆)
+  ### 二叉堆
+  二叉堆有两个性质 结构性 堆序性
+  堆的操作必须到堆的所有性质都被满足时才能终止
+  #### 结构性质
+  堆是一棵被完全填满的二叉树 有可能的例外是在底层 底层上的元素从左到右填入
+  这样的树称为完全二叉树(complete binary tree)
+  
+  一个堆结构将由一个(Comparable对象的)数组和一个代表当前堆的大小的整数组成
+  #### 堆序性质
+  对于每一个节点X X的父亲中的关键字小于或等于X中的关键字 根节点除外(它没有父亲)
+  
   
 '''
 tags: []

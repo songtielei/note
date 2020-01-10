@@ -1,0 +1,18 @@
+createdAt: "2018-11-30T14:36:16.780Z"
+updatedAt: "2018-11-30T14:38:06.765Z"
+type: "MARKDOWN_NOTE"
+folder: "2d90bb286c7337ef5d47"
+title: "Intellij idea"
+content: '''
+    
+  Intellij idea 
+  
+  从命令行打开项目
+  打开Intellij idea-->Tools-->Create Command-line Lanucher
+  
+  然后打开shell窗口 进入指定项目的根目录 输入idea .
+  
+'''
+tags: []
+isStarred: false
+isTrashed: false

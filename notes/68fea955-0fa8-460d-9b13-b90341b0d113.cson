@@ -1,0 +1,72 @@
+createdAt: "2019-11-14T03:47:52.581Z"
+updatedAt: "2019-11-22T09:17:55.351Z"
+type: "MARKDOWN_NOTE"
+folder: "2d90bb286c7337ef5d47"
+title: "spring 全局异常处理"
+tags: []
+content: '''
+  spring 全局异常处理
+  
+  SpringBoot 默认提供 BasicErrorController
+  
+  ControllerAdvice 不能拦截 Filter 中抛出的异常 
+  解决办法
+  
+  ```
+  public class ExceptionHandlerFilter extends OncePerRequestFilter {
+      @Override
+      public void doFilterInternal(HttpServletRequest request, HttpServletResponse response, FilterChain filterChain) throws ServletException, IOException {
+          try {
+              filterChain.doFilter(request, response);
+  
+          } catch (BusinessException e) {
+              e.printStackTrace();
+              setErrorResponse(HttpStatus.OK, response, e);
+          }
+      }
+  
+      public void setErrorResponse(HttpStatus status, HttpServletResponse response, BusinessException ex){
+          response.setStatus(status.value());
+          response.setContentType("application/json;charset=UTF-8");
+          try {
+              ResponseEntity responseEntity = new ResponseEntity();
+              responseEntity.setRetCode(ex.getCode());
+              responseEntity.setMessage(ex.getMessage());
+              String json = convertToJson(responseEntity);
+              response.getWriter().write(json);
+          } catch (IOException e) {
+              e.printStackTrace();
+          }
+      }
+  
+      public String convertToJson(ResponseEntity responseEntity) throws JsonProcessingException {
+          if (responseEntity == null) {
+              return null;
+          }
+          ObjectMapper mapper = new ObjectMapper();
+          mapper.registerModule(new JavaTimeModule());
+          mapper.disable(SerializationFeature.WRITE_DATES_AS_TIMESTAMPS);
+  
+          return mapper.writeValueAsString(responseEntity);
+      }
+  
+  }
+  ```
+  
+  ```
+      @Bean
+      public FilterRegistrationBean exceptionHandlerFilterBean() {
+          ExceptionHandlerFilter exceptionHandlerFilter = new ExceptionHandlerFilter();
+          FilterRegistrationBean bean = new FilterRegistrationBean(exceptionHandlerFilter);
+  
+          //IMPORTANT #2: I didn't stress enough the importance of this line in my original answer,
+          //but it's here where we tell Spring to load this filter at the right point in the chain
+          //(with an order of precedence higher than oauth2's filters)
+          bean.setOrder(Ordered.HIGHEST_PRECEDENCE + 1);
+          return bean;
+      }
+  ```
+'''
+linesHighlighted: []
+isStarred: false
+isTrashed: false

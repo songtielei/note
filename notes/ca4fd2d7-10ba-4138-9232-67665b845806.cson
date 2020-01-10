@@ -1,0 +1,59 @@
+createdAt: "2019-02-15T08:36:20.270Z"
+updatedAt: "2019-02-15T09:57:50.131Z"
+type: "MARKDOWN_NOTE"
+folder: "2d90bb286c7337ef5d47"
+title: "java 8 in action"
+tags: []
+content: '''
+  java 8 in action
+  
+      File[] hiddenFiles = new File(".").listFiles(File::isHidden);
+  :: 方法引用语法
+  
+  Predicate  谓词
+  
+      public static boolean isGreenApple(Apple apple) {
+          return "green".equals(apple.getColor());
+      }
+      static List<Apple> filterApples(List<Apple> inventory, Predicate<Apple> p) {           List<Apple> result = new ArrayList<>();
+          for (Apple apple: inventory) { 
+              if (p.test(apple)) {
+                  result.add(apple);
+              }
+          }
+          return result;
+      }
+  
+      public interface Predicate<T> {
+          boolean test(T t);
+      }
+      filterApples(inventory, Apple::isGreenApple);
+  
+  
+  什么是谓词?
+  前面的代码传递了方法Apple::isGreenApple(它接受参数Apple并返回一个 boolean)给filterApples，后者则希望接受一个Predicate<Apple>参数。谓词(predicate) 在数学上常常用来代表一个类似函数的东西，它接受一个参数值，并返回true或false。你 在后面会看到，Java 8也会允许你写Function<Apple,Boolean>——在学校学过函数却没学 过谓词的读者对此可能更熟悉，但用Predicate<Apple>是更标准的方式，效率也会更高一 点儿，这避免了把boolean封装在Boolean里面
+  
+  匿名函数或Lambda
+  
+      filterApples(inventory, (Apple a) -> "green".equals(a.getColor()) );
+      
+  Lambda 表达式
+  
+  那到底在哪里可以使用Lambda呢?你可以在函数式接口上使用Lambda表达式
+  
+      (Apple o1, Apple o2) -> o1.getWeight().compareTo(o2.getWeight());
+      参数                  箭头 主体
+      
+  
+  函数式接口
+  函数式接口就是只定义一个抽象方法的接口
+  函数描述符
+  函数式接口的抽象方法的签名基本上就是Lambda表达式的签名。我们将这种抽象方法叫作函数描述符
+  
+  @FunctionalInterface 这个标注用于表示该接口会设计成 一个函数式接口
+    
+    
+'''
+linesHighlighted: []
+isStarred: false
+isTrashed: false

@@ -1,0 +1,20 @@
+createdAt: "2019-04-19T15:11:43.970Z"
+updatedAt: "2019-04-19T15:16:20.778Z"
+type: "MARKDOWN_NOTE"
+folder: "2d90bb286c7337ef5d47"
+title: "android 数据备份"
+tags: []
+content: '''
+  android 数据备份
+  
+  lftp
+  
+  lftp songtielei:19840718@192.168.1.174:2121
+  pget linspeed.svg
+  
+  
+  [技术\\|LFTP : 一个功能强大的命令行FTP程序](https://linux.cn/article-5460-1.html)
+'''
+linesHighlighted: []
+isStarred: false
+isTrashed: false
