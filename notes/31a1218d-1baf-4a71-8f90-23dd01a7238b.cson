@@ -1,0 +1,13 @@
+createdAt: "2020-01-17T17:14:02.971Z"
+updatedAt: "2020-01-17T17:14:06.382Z"
+type: "MARKDOWN_NOTE"
+folder: "2d90bb286c7337ef5d47"
+title: "find SourceCode -type d -print0 | xargs -0 chmod 755"
+tags: []
+content: '''
+  find SourceCode -type d -print0 | xargs -0 chmod 755
+  find SourceCode -type f -print0 | xargs -0 chmod 644
+'''
+linesHighlighted: []
+isStarred: false
+isTrashed: false
