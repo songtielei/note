@@ -1,0 +1,46 @@
+createdAt: "2021-01-30T07:44:09.145Z"
+updatedAt: "2021-01-30T07:44:11.748Z"
+type: "MARKDOWN_NOTE"
+folder: "2d90bb286c7337ef5d47"
+title: "docker 用法"
+tags: []
+content: '''
+  docker 用法
+  ```
+    # Cleanup exited processes:
+    docker rm $(docker ps -q -f status=exited)
+    # Cleanup dangling volumes:
+    docker volume rm $(docker volume ls -qf dangling=true)
+    # Cleanup dangling images:
+    docker rmi $(docker images --filter "dangling=true" -q --no-trunc)
+    
+    docker image rm $(docker image ls "kbastani/*" -q)
+  ```
+  
+  修改日志
+  修改目录
+  docker默认存储目录 /var/lib/docker
+  /etc/docker/daemon.json
+  ```
+  {
+      "log-driver": "json-file",
+      "log-opts": {
+          "max-size": "10m",
+          "max-file": "3"
+      },
+      "registry-mirrors": [
+          "http://hub-mirror.c.163.com"
+      ],
+      "insecure-registries": [
+          "10.100.50.27:5000"
+      ],
+      "data-root": "/home/hellxz/docker-home"
+  }
+  ```
+  
+  docker容器日志存放目录，最后那个路径为容器ID
+  /var/lib/docker/containers/a51a0f83c3fbc66e1ba7b4a6556c16487d0da9746c90fa79345532faa79030c1/
+'''
+linesHighlighted: []
+isStarred: false
+isTrashed: false

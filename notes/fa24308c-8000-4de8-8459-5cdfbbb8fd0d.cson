@@ -1,0 +1,13 @@
+createdAt: "2021-01-30T07:43:54.287Z"
+updatedAt: "2021-01-30T07:43:57.009Z"
+type: "MARKDOWN_NOTE"
+folder: "2d90bb286c7337ef5d47"
+title: "stateless"
+tags: []
+content: '''
+  stateless
+  即不包含域 也不包含对其他类中域的引用
+'''
+linesHighlighted: []
+isStarred: false
+isTrashed: false
