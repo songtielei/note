@@ -1,5 +1,5 @@
 createdAt: "2021-01-30T07:44:26.158Z"
-updatedAt: "2021-01-30T07:44:28.711Z"
+updatedAt: "2021-01-30T08:19:06.858Z"
 type: "MARKDOWN_NOTE"
 folder: "2d90bb286c7337ef5d47"
 title: "equals与==区别"
@@ -156,9 +156,10 @@ content: '''
       可重复读 （REPEATABLE READ）
       
       串行化 （SERIALIZABLE）
+      
+  ![47712c68.png](:storage/0a782a8e-43af-4d43-90d8-6895eadc906f/47712c68.png)
   
-      ![](image-khu6m90v.png)
-  
+  ![5f2ea4fc.png](:storage/0a782a8e-43af-4d43-90d8-6895eadc906f/5f2ea4fc.png)
   
   - mybatis 分页插件的实现原理是什么
   
@@ -177,12 +178,12 @@ content: '''
       线程池维护多个线程，等待监督管理者分配可并发执行的任务。这种做法，一方面避免了处理任务时创建销毁线程开销的代价，另一方面避免了线程数量膨胀导致的过分调度问题，保证了对内核的充分利用
       
       ThreadPoolExecutor UML类图
-      ![](image-khu7vgru.png)
+      ![3206c88f.png](:storage/0a782a8e-43af-4d43-90d8-6895eadc906f/3206c88f.png)
       
       ThreadPoolExecutor实现的顶层接口是Executor，顶层接口Executor提供了一种思想：将任务提交和任务执行进行解耦。用户无需关注如何创建线程，如何调度线程来执行任务，用户只需提供Runnable对象，将任务的运行逻辑提交到执行器(Executor)中，由Executor框架完成线程的调配和任务的执行部分。
       
       ThreadPoolExecutor运行流程
-      ![](image-khu7x4tt.png)
+      ![b358d76b.png](:storage/0a782a8e-43af-4d43-90d8-6895eadc906f/b358d76b.png)
       
   - 线程池用法，应用场景
   
