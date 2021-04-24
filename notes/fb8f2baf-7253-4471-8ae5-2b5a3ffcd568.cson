@@ -1,0 +1,33 @@
+createdAt: "2021-03-04T02:18:55.722Z"
+updatedAt: "2021-03-04T02:24:22.301Z"
+type: "MARKDOWN_NOTE"
+folder: "2d90bb286c7337ef5d47"
+title: "spring"
+tags: []
+content: '''
+  spring
+  
+  ```
+  javax.servlet.ServletContainerInitializer
+  
+  
+  @HandlesTypes(WebApplicationInitializer.class)
+  public class SpringServletContainerInitializer implements ServletContainerInitializer
+  
+  
+  org.springframework.web.WebApplicationInitializer
+  
+  org.springframework.boot.web.servlet.ServletContextInitializer
+  ```
+  
+  Spring Boot提供的在Servlet 3.0+环境中用于程序化配置ServletContext的接口。该接口ServletContextInitializer主要被RegistrationBean实现用于往ServletContext容器中注册Servlet,Filter或者EventListener。这些ServletContextInitializer的设计目的主要是用于这些实例被Spring IoC容器管理。这些ServletContextInitializer实例不会被SpringServletContainerInitializer检测，因此不会被Servlet容器自动启动。
+  
+  该接口ServletContextInitializer和Spring Web的另外一个接口WebApplicationInitializer看起来几乎一模一样。但二者使用目的不同。Spring Web中,WebApplicationInitializer也是针对Servlet 3.0+环境，设计用于程序化配置ServletContext，跟传统的web.xml相对或者配合使用。WebApplicationInitializer实现类会被SpringServletContainerInitializer自动检测和启动。
+  
+  TomcatStarter是Spring Boot Web Servlet应用结合Tomcat使用时的一个ServletContainerInitializer实现。一组ServletContextInitializer会被设置到ServletContainerInitializer TomcatStarter上，而TomcatStarter在Servlet容器启动过程中调用自己的方法#onStartup,会逐一调用这些ServletContextInitializer的方法#onStartup初始化ServletContext。
+  
+  
+'''
+linesHighlighted: []
+isStarred: false
+isTrashed: false

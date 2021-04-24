@@ -1,0 +1,28 @@
+createdAt: "2021-02-04T07:21:22.206Z"
+updatedAt: "2021-02-04T07:24:14.522Z"
+type: "MARKDOWN_NOTE"
+folder: "2d90bb286c7337ef5d47"
+title: "spring security oauth2"
+tags: []
+content: '''
+  spring security oauth2
+  
+  @EnableResourceServer @EnableAuthorizationServer @EnableWebSecurity 都需要加上@Configuration
+  
+  resource server 需要配置 client 
+  ```
+  security:
+    oauth2:
+      client:
+        client-id: app
+        client-secret: 123456
+        scope: server
+      resource:
+        id: ${spring.application.name}
+        token-info-uri: http://localhost:8081/oauth/check_token
+  ```
+  
+'''
+linesHighlighted: []
+isStarred: false
+isTrashed: false

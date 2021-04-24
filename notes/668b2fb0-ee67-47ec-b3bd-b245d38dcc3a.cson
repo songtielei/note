@@ -1,0 +1,66 @@
+createdAt: "2021-02-27T11:51:49.372Z"
+updatedAt: "2021-03-23T03:27:18.239Z"
+type: "MARKDOWN_NOTE"
+folder: "2d90bb286c7337ef5d47"
+title: "spring security"
+tags: []
+content: '''
+  spring security
+  
+  ![09b40194.png](:storage/668b2fb0-ee67-47ec-b3bd-b245d38dcc3a/09b40194.png)
+  
+  ![9e921cc5.png](:storage/668b2fb0-ee67-47ec-b3bd-b245d38dcc3a/9e921cc5.png)
+  
+  ![5fd285d0.png](:storage/668b2fb0-ee67-47ec-b3bd-b245d38dcc3a/5fd285d0.png)
+  
+  ![0920c1b1.png](:storage/668b2fb0-ee67-47ec-b3bd-b245d38dcc3a/0920c1b1.png)
+  
+  ![35705cd4.png](:storage/668b2fb0-ee67-47ec-b3bd-b245d38dcc3a/35705cd4.png)
+  
+  ![72bfc803.png](:storage/668b2fb0-ee67-47ec-b3bd-b245d38dcc3a/72bfc803.png)
+  
+  ![91f54f9f.png](:storage/668b2fb0-ee67-47ec-b3bd-b245d38dcc3a/91f54f9f.png)
+  
+  ![6e3d3494.png](:storage/668b2fb0-ee67-47ec-b3bd-b245d38dcc3a/6e3d3494.png)
+  
+  ![a2c1b4ff.png](:storage/668b2fb0-ee67-47ec-b3bd-b245d38dcc3a/a2c1b4ff.png)
+  
+  ![ad090763.png](:storage/668b2fb0-ee67-47ec-b3bd-b245d38dcc3a/ad090763.png)
+  
+  ![c1bf77f2.png](:storage/668b2fb0-ee67-47ec-b3bd-b245d38dcc3a/c1bf77f2.png)
+  
+  token-info-uri(RemoteTokenServices) 可以提供 userDetailService 获取到用户信息
+  ```
+  	public Authentication extractAuthentication(Map<String, ?> map) {
+  		if (map.containsKey(USERNAME)) {
+  			Object principal = map.get(USERNAME);
+  			Collection<? extends GrantedAuthority> authorities = getAuthorities(map);
+  			if (userDetailsService != null) {
+  				UserDetails user = userDetailsService.loadUserByUsername((String) map.get(USERNAME));
+  				authorities = user.getAuthorities();
+  				principal = user;
+  			}
+  			return new UsernamePasswordAuthenticationToken(principal, "N/A", authorities);
+  		}
+  		return null;
+  	}
+  ```
+  user-info-uri(UserInfoTokenServices) 需要自己实现 返回map value 为 principal
+  ```
+  	private static final String[] PRINCIPAL_KEYS = new String[] { "user", "username", "userid", "user_id", "login",
+  			"id", "name" };
+  
+  	@Override
+  	public Object extractPrincipal(Map<String, Object> map) {
+  		for (String key : PRINCIPAL_KEYS) {
+  			if (map.containsKey(key)) {
+  				return map.get(key);
+  			}
+  		}
+  		return null;
+  	}
+  ```
+'''
+linesHighlighted: []
+isStarred: false
+isTrashed: false
