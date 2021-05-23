@@ -1,0 +1,26 @@
+createdAt: "2021-05-23T13:30:57.022Z"
+updatedAt: "2021-05-23T13:31:11.868Z"
+type: "MARKDOWN_NOTE"
+folder: "2d90bb286c7337ef5d47"
+title: "sysbench"
+tags: []
+content: '''
+  sysbench 
+  
+  /usr/local/opt/sysbench/share/sysbench/oltp_read_write.lua --time=300 --mysql-host=127.0.0.1 --mysql-port=3306 --mysql-user=root --mysql-password=123456 --mysql-db=sbtest --table-size=10000 --tables=32 --threads=32 --events=999999999 --report-interval prepare
+  
+  sysbench /usr/local/opt/sysbench/share/sysbench/oltp_read_write.lua --time=300 --mysql-host=127.0.0.1 --mysql-port=3306 --mysql-user=root --mysql-password=123456 --mysql-db=sbtest --table-size=10000 --tables=32 --threads=32 --events=999999999  --report-interval=10  run
+  
+  sysbench /usr/local/opt/sysbench/share/sysbench/oltp_read_write.lua --time=300 --mysql-host=127.0.0.1 --mysql-port=3306 --mysql-user=root --mysql-password=123456 --mysql-db=sbtest --table-size=10000 --tables=32 --threads=32 --events=999999999  --report-interval=10  cleanup
+  
+  
+  sysbench /usr/share/sysbench/oltp_read_write.lua --time=300 --mysql-host=10.122.42.161 --mysql-port=3306 --mysql-user=root --mysql-password=123456 --mysql-db=sbtest --table-size=1000000 --tables=32 --threads=32 --events=999999999 --report-interval prepare
+  
+  
+  SHOW GLOBAL STATUS;
+  show full processlist;
+  show engine innodb status;
+'''
+linesHighlighted: []
+isStarred: false
+isTrashed: false

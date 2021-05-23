@@ -1,0 +1,57 @@
+createdAt: "2021-05-23T13:41:23.649Z"
+updatedAt: "2021-05-23T13:42:03.155Z"
+type: "MARKDOWN_NOTE"
+folder: "2d90bb286c7337ef5d47"
+title: "Uncomment external_url if you want to enable external proxy"
+tags: []
+content: '''
+  harbor
+  
+  修改项
+  Hostname 
+  http port
+  data_volume
+  external_url
+  
+  
+  
+  通过nginx配置了代理之后，还需要修改harbor的配置文件设置proxy地址：
+  [root@xxxx harbor]# vim harbor.yml
+  # Uncomment external_url if you want to enable external proxy
+  # And when it enabled the hostname will no longer used
+  ## 打开该项配置，这里对应着nginx所设置的代理后访问地址
+  external_url: https://xx.xx.com
+  
+  
+  {
+    "experimental": false,
+    "debug": true,
+    "insecure-registries": [
+      "harbor.ui-tech.cn:80"
+    ]
+  }
+  Insecure-registries 要加上端口 否则不生效
+  
+  
+  Docker registry2
+  
+  docker pull registry:2
+  
+  Fix  413 Request Entity Too Large
+  
+  http {
+      ...
+      # disable any limits to avoid HTTP 413 for large image uploads
+      client_max_body_size 0;
+      ...
+  }
+  
+  Fix 400 The plain HTTP request was sent to HTTPS port
+  
+  server {
+      proxy_set_header X-Forwarded-Proto $scheme;
+  }
+'''
+linesHighlighted: []
+isStarred: false
+isTrashed: false

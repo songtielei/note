@@ -1,0 +1,46 @@
+createdAt: "2021-05-23T13:34:30.776Z"
+updatedAt: "2021-05-23T13:34:33.160Z"
+type: "MARKDOWN_NOTE"
+folder: "2d90bb286c7337ef5d47"
+title: "docker exec -it 507320e9dbd3 sh"
+tags: []
+content: '''
+  
+  sudo docker run -d  --privileged=true \\
+      -p 5000:5000 \\
+      --name registry \\
+      --restart=always \\
+      -v /data/dockerregistry/data:/var/lib/registry \\
+      -v /data/dockerregistry/conf/registry-config.yml:/etc/docker/registry/config.yml   registry:2
+  
+  
+  Rm -rf /var/lib/registry/docker/registry/v2/repositories/jinkens
+  
+  # docker exec -it 507320e9dbd3 sh
+  / # registry garbage-collect /etc/docker/registry/config.yml
+  
+  / # du -sch
+  440.6M  .
+  440.6M  total
+  
+  sudo docker run -p 18080:8080 -p 50000:50000 —privileged
+  =true -v $(which docker):/usr/bin/docker -v /var/run/docker.sock:/var/run/docker.sock -e TZ="Asia/Shanghai" -v /etc/localtime:/etc/localtime:ro  jenkins/jenkins:lts
+  
+  docker run -u root -itd --name jenkins -p 6001:8080 -v $(which docker):/usr/bin/docker -v /var/run/docker.sock:/var/run/docker.sock -e TZ="Asia/Shanghai" -v /etc/localtime:/etc/localtime:ro -v /volume1/docker/jenkins:/var/jenkins_home jenkins/jenkins
+  
+  
+  docker run -p 8888:8888 jupyter/tensorflow-notebook:712576e0e96b
+  Visual studio code. 也启动了Jupiter notebook 导致 docker 启动的notebook登陆不上 
+  
+  docker pull tensorflow/serving:2.3.0
+  docker run -t --rm -p 8501:8501 \\
+      -v "$TESTDATA/saved_model_half_plus_two_cpu:/models/half_plus_two" \\
+     -e MODEL_NAME=half_plus_two \\
+     tensorflow/serving:2.3.0 &
+  
+  curl -d '{"instances": [1.0, 2.0, 5.0]}' \\
+       -X POST http://localhost:8501/v1/models/half_plus_two:predict
+'''
+linesHighlighted: []
+isStarred: false
+isTrashed: false

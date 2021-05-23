@@ -1,0 +1,10 @@
+createdAt: "2021-05-23T13:39:07.631Z"
+updatedAt: "2021-05-23T13:39:10.168Z"
+type: "MARKDOWN_NOTE"
+folder: "2d90bb286c7337ef5d47"
+title: "sudo docker rmi --force sudo docker images | grep frame | awk '{print $3}'"
+tags: []
+content: "sudo docker rmi --force `sudo docker images | grep frame | awk '{print $3}'`"
+linesHighlighted: []
+isStarred: false
+isTrashed: false

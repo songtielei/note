@@ -1,0 +1,17 @@
+createdAt: "2021-05-23T13:32:11.101Z"
+updatedAt: "2021-05-23T13:32:13.551Z"
+type: "MARKDOWN_NOTE"
+folder: "2d90bb286c7337ef5d47"
+title: "yum 使用socks5代理"
+tags: []
+content: '''
+  yum 使用socks5代理
+  
+  修改/etc/yum.conf 文件
+  在文件的最后加入一行：
+  proxy=socks5://your_ip:port
+  
+'''
+linesHighlighted: []
+isStarred: false
+isTrashed: false

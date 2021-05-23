@@ -1,0 +1,33 @@
+createdAt: "2021-05-23T13:27:19.632Z"
+updatedAt: "2021-05-23T13:27:46.096Z"
+type: "MARKDOWN_NOTE"
+folder: "2d90bb286c7337ef5d47"
+title: "mysql"
+tags: []
+content: '''
+  mysql
+  
+  show variables like "%case%";
+  
+  
+  SET GLOBAL log_output = 'TABLE';SET GLOBAL general_log = 'ON';
+  
+  SELECT * from mysql.general_log ORDER BY event_time DESC;
+  
+  SELECT CONVERT (argument USING utf8) AS argument from mysql.general_log ORDER BY event_time DESC;
+  
+  show processlist;
+  
+  show master status;
+  
+  
+  docker run -p 3306:3306 --name some-mysql -v /Users/songtielei/Temp/log:/log -v /Users/songtielei/Temp/mysql/my.cnf:/etc/mysql/my.cnf -e MYSQL_ROOT_PASSWORD=123456 -d mysql:5 --lower_case_table_names=1
+  
+  
+  
+  
+  docker run -d      -p 9071:443      -p 9070:80      -p 9072:22      --name gitlab      --restart always      -v /codesource/dockergit/config/:/etc/gitlab      -v /codesource/dockergit/logs:/var/log/gitlab      -v /codesource/dockergit/data:/var/opt/gitlab      gitlab/gitlab-ce:10.8.4-ce.0
+'''
+linesHighlighted: []
+isStarred: false
+isTrashed: false

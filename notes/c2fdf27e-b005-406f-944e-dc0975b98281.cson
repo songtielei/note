@@ -1,0 +1,44 @@
+createdAt: "2021-05-23T13:28:38.012Z"
+updatedAt: "2021-05-23T13:28:49.571Z"
+type: "MARKDOWN_NOTE"
+folder: "2d90bb286c7337ef5d47"
+title: "javascript"
+tags: []
+content: '''
+  javascript
+  
+  处理html元素
+    将html构建 为 dom
+    执行javascript代码
+   事件处理
+    同一时刻只能执行一个代码片段
+    所有已生成的事件都会放在同一个事件队列中
+  
+  注册事件处理器
+    通过把函数赋给某个特殊属性
+  通过使用内置addEventListener方法
+  
+  
+  函数定义
+    函数声明(function declarations) 函数表达式(function expressions)
+    箭头函数
+      对于0个或1个以上的参数 括号为必选项 1个参数时可以不加括号
+      以括号分隔的参数名列表为可选项
+      如果箭头函数的函数体是一个表达式 则该箭头函数的返回值就是表达式的值
+      如果函数体是一个代码块 那么返回值则与普通函数一样（如果没有 return语句 返回值是undefined 反之 返回值就是return 表达式的值）
+    函数构造函数
+    生成器函数
+  
+  函数四种调用方式
+    作为函数调用
+    作为方法 关联在一个对象上被调用
+    作为构造函数调用 实例化一个新对象
+    通过函数的 apply 或者call方法
+  
+  如果构造函数返回一个对象 则该对象将作为整个表达式的值返回 而传入构造函数的this将被丢弃
+  如果构造函数返回的是非对象类型 则忽略返回值 返回新创建的对象
+  
+'''
+linesHighlighted: []
+isStarred: false
+isTrashed: false

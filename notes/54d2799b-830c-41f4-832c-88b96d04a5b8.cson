@@ -1,0 +1,14 @@
+createdAt: "2021-05-23T13:35:57.479Z"
+updatedAt: "2021-05-23T13:36:04.059Z"
+type: "MARKDOWN_NOTE"
+folder: "2d90bb286c7337ef5d47"
+title: "tensorflow"
+tags: []
+content: '''
+  tensorflow
+  
+   docker run -it --rm -p 8500:8500 -p 8501:8501 -v "/Users/songtielei/Downloads/mykerasmodel:/models/my_mnist_model" -e MODEL_NAME=my_mnist_model tensorflow/serving
+'''
+linesHighlighted: []
+isStarred: false
+isTrashed: false

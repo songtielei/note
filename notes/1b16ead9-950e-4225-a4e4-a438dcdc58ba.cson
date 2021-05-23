@@ -1,0 +1,38 @@
+createdAt: "2021-05-23T13:40:57.501Z"
+updatedAt: "2021-05-23T13:43:52.409Z"
+type: "MARKDOWN_NOTE"
+folder: "2d90bb286c7337ef5d47"
+title: "let's encypt"
+tags: []
+content: '''
+  let's encypt
+  
+  ./certbot certonly  -d “*.ui-tech.cn” --manual --preferred-challenges dns-01  --server https://acme-v02.api.letsencrypt.org/directory
+  
+  
+  acme.sh --issue --dns -d *.ui-tech.cn --dns --yes-I-know-dns-manual-mode-enough-go-ahead-please
+  
+  
+  
+  Centos 7
+  sudo yum install epel-release
+  sudo yum install snapd
+  sudo systemctl enable --now snapd.socket
+  sudo ln -s /var/lib/snapd/snap /snap
+  
+  sudo snap install core
+  sudo snap refresh core
+  sudo snap install --classic certbot
+  sudo ln -s /snap/bin/certbot /usr/bin/certbot
+  
+  sudo docker run -it --rm --name certbot \\
+              -v "/Users/songtielei/ui-tech/letsencrypt/etc:/etc/letsencrypt" \\
+              -v "/Users/songtielei/ui-tech/letsencrypt/lib:/var/lib/letsencrypt" \\
+              certbot/certbot certonly  -d "*.ui-tech.cn" --manual --preferred-challenges dns-01  --server https://acme-v02.api.letsencrypt.org/directory
+  
+  
+  docker run -it --rm --name certbot -v "/Users/songtielei/ui-tech/letsencrypt/etc:/etc/letsencrypt" -v "/Users/songtielei/ui-tech/letsencrypt/lib:/var/lib/letsencrypt" certbot/certbot certonly  -d "*.ui-tech.cn" --manual --preferred-challenges dns-01  --server https://acme-v02.api.letsencrypt.org/directory
+'''
+linesHighlighted: []
+isStarred: false
+isTrashed: false

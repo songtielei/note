@@ -1,0 +1,22 @@
+createdAt: "2021-05-23T13:32:27.258Z"
+updatedAt: "2021-05-23T13:32:53.501Z"
+type: "MARKDOWN_NOTE"
+folder: "2d90bb286c7337ef5d47"
+title: "动态代理"
+tags: []
+content: '''
+  
+  动态代理
+  
+  ssh -D localhost:8080 service@10.100.50.27
+  
+  sudo yum install -y yum-utils && sudo yum-config-manager --add-repo https://download.docker.com/linux/centos/docker-ce.repo
+  yum list docker-ce --showduplicates | sort -r
+  sudo yum install docker-ce docker-ce-cli containerd.io
+  
+  
+  ssh -N -v -R 3000:127.0.0.1:80 hroadm1@10.122.190.158
+'''
+linesHighlighted: []
+isStarred: false
+isTrashed: false

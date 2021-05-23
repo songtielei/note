@@ -1,0 +1,30 @@
+createdAt: "2021-05-23T13:38:25.070Z"
+updatedAt: "2021-05-23T13:38:33.667Z"
+type: "MARKDOWN_NOTE"
+folder: "2d90bb286c7337ef5d47"
+title: "nginx proxy"
+tags: []
+content: '''
+  nginx proxy
+  
+  wget -c https://nginx.org/download/nginx-1.18.0.tar.gz
+  
+  
+  Sudo yum install -y zlib-devel
+  ./configure --add-module=/home/lcrxyf/nginx/ngx_http_proxy_connect_module --without-http_rewrite_module
+  
+  
+  https://github.com/mitmproxy/mitmproxy
+  
+  docker pull mitmproxy/mitmproxy:6.0.2
+  
+  docker run --rm -it -p 20002:8080 mitmproxy/mitmproxy:6.0.2
+  
+  sudo docker run --rm -it -p 20002:8080 -d mitmproxy/mitmproxy:6.0.2 mitmweb --web-host 0.0.0.0  --set ssl_insecure=true
+  
+  
+  
+'''
+linesHighlighted: []
+isStarred: false
+isTrashed: false

@@ -1,0 +1,31 @@
+createdAt: "2021-05-23T13:31:31.862Z"
+updatedAt: "2021-05-23T13:31:41.573Z"
+type: "MARKDOWN_NOTE"
+folder: "2d90bb286c7337ef5d47"
+title: "select"
+tags: []
+content: '''
+  select
+  
+  SELECT 
+      cc.cabinet_name AS '电柜名称',
+      cc.cabinet_number AS '电柜编号',
+      cc.charge_mode_id AS '充电模式',
+      oo.order_no,
+      oo.amount
+  FROM
+      cabinet_new.order_order oo
+          LEFT JOIN
+      cabinet_new.cabinet_cabinet cc ON oo.cabinet_number = cc.cabinet_number
+  
+          LEFT JOIN
+      cabinet_new.organization_branch ob ON cc.branch_id = ob.id
+              LEFT JOIN
+      cabinet_new.cabinet_lattice_user clu ON clu.cabinet_id = cc.id
+  WHERE
+      ob.branch_name LIKE '%增上缘%';
+                      
+'''
+linesHighlighted: []
+isStarred: false
+isTrashed: false

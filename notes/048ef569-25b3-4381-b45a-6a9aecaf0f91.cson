@@ -1,0 +1,13 @@
+createdAt: "2021-05-23T13:46:17.034Z"
+updatedAt: "2021-05-23T13:46:19.362Z"
+type: "MARKDOWN_NOTE"
+folder: "2d90bb286c7337ef5d47"
+title: "mount -t nfs pi.song.com:/media/pi/WD /Users/songtielei/Shares"
+tags: []
+content: '''
+  mount -t nfs pi.song.com:/media/pi/WD /Users/songtielei/Shares
+  
+'''
+linesHighlighted: []
+isStarred: false
+isTrashed: false

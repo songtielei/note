@@ -1,0 +1,15 @@
+createdAt: "2021-05-23T13:35:09.502Z"
+updatedAt: "2021-05-23T13:35:16.558Z"
+type: "MARKDOWN_NOTE"
+folder: "2d90bb286c7337ef5d47"
+title: "jenkins"
+tags: []
+content: '''
+  jenkins
+  
+  Jenkins runs the docker container with the user 1002 and there is no user defined. The variable user.home is not set and gradle, maven or sonar cannot properly locate where to put the dependencies. If user.home is not found then it (or docker or the OS) creates a "?" folder and put the .gradle, .m2 or .sonar inside to download them. The solution to avoid this weird issue is to configure user.home in the JAVA_OPTIONS including the following environment variable:
+  
+'''
+linesHighlighted: []
+isStarred: false
+isTrashed: false

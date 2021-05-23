@@ -1,0 +1,57 @@
+createdAt: "2021-05-23T13:48:41.969Z"
+updatedAt: "2021-05-23T13:49:20.065Z"
+type: "MARKDOWN_NOTE"
+folder: "2d90bb286c7337ef5d47"
+title: "uitech"
+tags: []
+content: '''
+  uitech
+  
+  
+  前端
+  vue: 2.6.11
+  echarts: 4.9.0
+  ant-design-vue: 1.6.2
+  
+  后端
+  redis cluster
+  redis: 6.2.3
+  PostgreSQL: 12.7
+  驱动使用 spring boot 默认的版本
+  org.postgresql:postgresql:42.2.14
+  org.springframework.boot:spring-boot-starter-data-redis:2.3.2.RELEASE
+  
+  com.baomidou:mybatis-plus-boot-starter:3.4.1
+  
+  mybatis: 3.5.6
+  
+  
+  io.github.majusko:pulsar-java-spring-boot-starter:1.0.4
+  
+  
+  
+  提交 ocr 识别文件 success  参数什么用处 
+  
+  提交 ocr 识别文件是单个文件
+  提交 ocr 识别状态是个列表
+  
+  
+  电子卷宗接收任务 ocr 识别状态回写并且与案件关联后 推送 ocr 识别完成消息
+  何时关联？
+  
+  
+  一个卷宗是否是多个文件
+  一个文件是否就是一个扫描页
+  识别状态是为可以随意设置
+  
+  systemid 是什么
+  
+  如何获取token
+  
+  
+  
+  23081
+'''
+linesHighlighted: []
+isStarred: false
+isTrashed: false

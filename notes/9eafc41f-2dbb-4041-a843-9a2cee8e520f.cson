@@ -1,0 +1,18 @@
+createdAt: "2021-05-23T13:47:24.984Z"
+updatedAt: "2021-05-23T13:47:36.037Z"
+type: "MARKDOWN_NOTE"
+folder: "2d90bb286c7337ef5d47"
+title: "spring boot"
+tags: []
+content: '''
+  spring boot
+  
+  默认情况下，优雅关机并没有开启（还是立即关机），你仅需添加server.shutdown=graceful配置即可开启优雅关机（取值参见2.3.0新增的Shutdown枚举类，默认值参见AbstractConfigurableWebServerFactory.shutdown属性值）
+  
+  活性探测器
+  Spring Boot现在内置了关于应用程序可用性的探测的能力，可以跟踪应用程序是否处于活动状态以及是否准备好处理流量。如果你配置了management.health.probes.enabled=true，那么健康检查端点就可以查看你应用的活性和就绪列表，这在在Kubernetes上运行时，这是自动完成的。
+  
+'''
+linesHighlighted: []
+isStarred: false
+isTrashed: false

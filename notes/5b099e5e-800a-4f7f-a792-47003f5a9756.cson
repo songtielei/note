@@ -1,0 +1,59 @@
+createdAt: "2021-05-23T13:37:55.986Z"
+updatedAt: "2021-05-23T13:37:58.331Z"
+type: "MARKDOWN_NOTE"
+folder: "2d90bb286c7337ef5d47"
+title: "ssh -D localhost:8080 service@10.100.50.27"
+tags: []
+content: '''
+  ssh -D localhost:8080 service@10.100.50.27
+  
+  sudo yum install -y yum-utils && sudo yum-config-manager --add-repo https://download.docker.com/linux/centos/docker-ce.repo
+  yum list docker-ce --showduplicates | sort -r
+  sudo yum install docker-ce docker-ce-cli containerd.io
+  
+  
+  yum 使用socks5代理
+  
+  修改/etc/yum.conf 文件
+  在文件的最后加入一行：
+  proxy=socks5://your_ip:port
+  
+  
+  Docker使用socks5代理
+  
+  1.创建docker服务插件目录
+  sudo mkdir -p /etc/systemd/system/docker.service.d
+  
+  2.创建一个名为http-proxy.conf的文件
+  sudo touch /etc/systemd/system/docker.service.d/http-proxy.conf 
+  
+  3.编辑http-proxy.conf的文件
+  sudo vim /etc/systemd/system/docker.service.d/http-proxy.conf 
+  
+  4.写入内容(将代理ip和代理端口修改成你自己的)
+  [Service]
+  Environment="HTTP_PROXY=socks5://代理ip:代理端口/"
+  
+  5.重新加载服务程序的配置文件
+  sudo systemctl daemon-reload
+  
+  6.重启docker
+  sudo systemctl restart docker
+  
+  
+  sudo  docker run -d -p 15672:15672  -p 25672:25672 -p 5672:5672 --hostname rabbitmq \\
+   --restart=always  -e RABBITMQ_DEFAULT_USER=guest -e RABBITMQ_DEFAULT_PASS=guest  \\
+   --name hro-rabbitmq rabbitmq:3.7.8-management-alpine
+  
+  sudo docker network create service-hro
+  
+  sudo chmod 777 /data/elasticsearch/data
+  sudo docker run --restart=always --name elasticsearch --hostname=elasticsearch -p 9200:9200 -p 9300:9300 -v /data/elasticsearch/data:/usr/share/elasticsearch/data -e "discovery.type=single-node" -d docker.elastic.co/elasticsearch/elasticsearch:6.4.3
+  
+  sudo docker run --name mysql -p 3306:3306 --restart=always --hostname=mysql -v /data/mysql:/var/lib/mysql -e MYSQL_ROOT_PASSWORD=123456 -d mysql:5.7.30
+  
+  sudo docker run --name reids -p 6379:6379 --restart=always --hostname=redis -v /data/redis:/data -d redis:6.0-rc4-alpine --appendonly yes --requirepass abcd-1234
+'''
+linesHighlighted: []
+isStarred: false
+isTrashed: false

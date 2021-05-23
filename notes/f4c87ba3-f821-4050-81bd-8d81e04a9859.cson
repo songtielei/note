@@ -1,0 +1,17 @@
+createdAt: "2021-05-23T13:43:21.122Z"
+updatedAt: "2021-05-23T13:43:26.027Z"
+type: "MARKDOWN_NOTE"
+folder: "2d90bb286c7337ef5d47"
+title: "ffmpeg"
+tags: []
+content: '''
+  ffmpeg
+  
+  ffmpeg -i test.264 -vcodec copy -f mp4  test.mp4
+  
+  ffmpeg -i video_data(1).h264 -c:v libx265 -an -x265-params crf=25 OUT.mp4
+  
+'''
+linesHighlighted: []
+isStarred: false
+isTrashed: false

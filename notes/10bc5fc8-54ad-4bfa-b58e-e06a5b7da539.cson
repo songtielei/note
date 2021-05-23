@@ -1,0 +1,30 @@
+createdAt: "2021-05-23T13:33:19.336Z"
+updatedAt: "2021-05-23T13:33:28.505Z"
+type: "MARKDOWN_NOTE"
+folder: "2d90bb286c7337ef5d47"
+title: "Docker修改日志"
+tags: []
+content: '''
+  Docker修改日志
+  
+  {
+      "log-driver": "json-file",
+      "log-opts": {
+          "max-size": "10m",
+          "max-file": "3"
+      },
+      "registry-mirrors": [
+          "http://hub-mirror.c.163.com"
+      ],
+      "insecure-registries": [
+          "10.100.50.27:5000"
+      ],
+      "data-root": "/home/hellxz/docker-home"
+  }
+  
+  1、停止nexus，删除docker容器的日志 docker容器日志存放目录，最后那个路径为容器ID /var/lib/docker/containers/a51a0f83c3fbc66e1ba7b4a6556c16487d0da9746c90fa79345532faa79030c1/
+  
+'''
+linesHighlighted: []
+isStarred: false
+isTrashed: false
